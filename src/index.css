@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bloom & Bliss Flower Shop Design System 
+Soft pastel palette with elegant floral aesthetics
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Pure White background */
+    --background: 0 0% 100%;
+    --foreground: 220 10% 10%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+
+    /* Primary - Professional Gold Accent (#D4AF37) */
+    --primary: 45 61% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 45 61% 45%;
+
+    /* Secondary - Soft Gray for subtle backgrounds */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 10% 10%;
+    --secondary-hover: 210 20% 92%;
+
+    /* Muted - Soft neutrals */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Gold tint for highlights */
+    --accent: 45 61% 95%;
+    --accent-foreground: 45 61% 20%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 45 61% 52%;
+
+    --radius: 0.5rem;
+
+    /* Custom construction design tokens */
+    --gold: 45 61% 52%;
+    --charcoal: 220 10% 10%;
+    --smoke: 210 20% 96%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 61% 52%), hsl(45 61% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 96%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 15px hsl(220 10% 10% / 0.05);
+    --shadow-gold: 0 8px 30px hsl(45 61% 52% / 0.15);
+
+    /* Animations */
+    --transition-premium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark mode - Sleek Charcoal */
+    --background: 220 10% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 61% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 10% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 61% 15%;
+    --accent-foreground: 45 61% 90%;
+
+    --border: 220 10% 15%;
+    --input: 220 10% 15%;
+    --ring: 45 61% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+
+  /* Hover effects for premium cards */
+  .premium-card {
+    transition: var(--transition-premium);
+    transform-origin: center;
+  }
+
+  .premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bloom {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Utility classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 1s ease forwards;
+}
+
+.animate-bloom {
+  animation: bloom 0.8s ease forwards;
+}
+
+.animate-petal-fall {
+  animation: petal-fall linear infinite;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
