@@ -1,9 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Flower, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-
-import logo from "@/assets/sammy-logo.svg";
 
 const Header = () => {
   const location = useLocation();
@@ -23,8 +21,9 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <span className="text-2xl font-bold text-primary group-hover:scale-105 transition-transform">Ngo Hoang Home</span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
+            <span className="text-2xl font-bold text-primary group-hover:scale-105 transition-transform">Sửa nhà Hà Nội</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Flower, Instagram, Facebook, Twitter } from "lucide-react";
-import logo from "@/assets/sammy-logo.svg";
+import { Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,8 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand + Social Media */}
           <div className="space-y-6">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary">Ngo Hoang Home</span>
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="w-10 h-10 object-contain" />
+              <span className="text-2xl font-bold text-primary">Sửa nhà Hà Nội</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Kiến tạo không gian sống mơ ước. Chúng tôi chuyên thi công trần thạch cao, sơn bả tường và sơn tường nhà trọn gói với chất lượng và độ bền vượt trội.
@@ -66,7 +66,7 @@ const Footer = () => {
             <div className="space-y-4 text-sm text-muted-foreground">
               <p className="flex items-center gap-3">📍 <span className="font-medium text-foreground">Địa chỉ:</span> Vân Nội, Phúc Thịnh, Hà Nội</p>
               <p className="flex items-center gap-3">📞 <span className="font-medium text-foreground">Hotline:</span> 0388.423.600</p>
-              <p className="flex items-center gap-3">📧 <span className="font-medium text-foreground">Email:</span> nhatnhi3344@gmail.com</p>
+              <p className="flex items-center gap-3">📧 <span className="font-medium text-foreground">Email:</span> suanhataihanoi368@gmail.com</p>
               <p className="flex items-center gap-3">✨ <span className="font-medium text-foreground">Làm việc:</span> 24/7 (Cả ngày lễ)</p>
             </div>
           </div>
@@ -74,7 +74,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-xs">
-            © 2026 Ngo Hoang Home – Chuyên gia thi công trần & sơn tường. All rights reserved.
+            © 2026 Sửa nhà Hà Nội – Chuyên gia thi công trần & sơn tường. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-muted-foreground">
             <a href="#" className="hover:text-primary">Chính sách bảo hành</a>

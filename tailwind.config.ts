@@ -59,6 +59,7 @@ export default {
         mint: "hsl(var(--mint))",
         lavender: "hsl(var(--lavender))",
         sage: "hsl(var(--sage))",
+        charcoal: "hsl(var(--charcoal))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
