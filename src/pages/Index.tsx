@@ -49,9 +49,136 @@ const slides = [
   }
 ];
 
+const articles = [
+  {
+    title: "Báo Giá Vách Thạch Cao Cách Âm Mới Nhất 2025",
+    description: "Cập nhật đơn giá thi công vách thạch cao cách âm, vách ngăn chống cháy cho văn phòng, phòng hát và nhà ở.",
+    date: "05/04/2025",
+    category: "Báo giá",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Vách thạch cao cách âm là giải pháp tối ưu cho không gian cần sự yên tĩnh như phòng ngủ, phòng làm việc, đặc biệt là các phòng karaoke hay studio chuyên nghiệp. Kết hợp cùng bông thủy tinh hoặc bông khoáng, vách thạch cao có khả năng giảm tiếng ồn cực tốt.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Bảng giá thi công (tham khảo):</h5>
+          <ul className="space-y-1 text-sm">
+            <li className="flex justify-between"><span>• Loại cơ bản (1 lớp + bông thủy tinh):</span> <span className="font-bold text-primary">270k - 320k/m2</span></li>
+            <li className="flex justify-between"><span>• Loại cao cấp (2 lớp + bông khoáng):</span> <span className="font-bold text-primary">350k - 450k/m2</span></li>
+            <li className="flex justify-between"><span>• Chống cháy chuyên dụng:</span> <span className="font-bold text-primary">Liên hệ trực tiếp</span></li>
+          </ul>
+        </div>
+        <p>Lưu ý: Đơn giá đã bao gồm nhân công và vật tư cơ bản, chưa bao gồm sơn bả hoàn thiện và VAT.</p>
+      </div>
+    )
+  },
+  {
+    title: "Dịch Vụ Sơn Nhà Đẹp Tại Hà Nội",
+    description: "Giải pháp sơn nhà trọn gói chuyên nghiệp, tư vấn phối màu chuẩn phong thủy, thi công nhanh gọn, sạch sẽ.",
+    date: "03/04/2025",
+    category: "Dịch vụ",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Dịch vụ sơn nhà trọn gói giúp thay đổi hoàn toàn diện mạo ngôi nhà. Chúng tôi sử dụng các dòng sơn cao cấp như Dulux, Kova, Jotun để đảm bảo độ bền màu và khả năng chống thấm, chống nấm mốc tuyệt vời.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Giá nhân công sơn (tham khảo):</h5>
+          <ul className="space-y-1 text-sm">
+            <li className="flex justify-between"><span>• Sơn lại nhà (không bả):</span> <span className="font-bold text-primary">10k - 15k/m2</span></li>
+            <li className="flex justify-between"><span>• Sơn lại (có dặm vá):</span> <span className="font-bold text-primary">17k - 20k/m2</span></li>
+            <li className="flex justify-between"><span>• Sơn mới hoàn toàn:</span> <span className="font-bold text-primary">25k - 35k/m2</span></li>
+          </ul>
+        </div>
+        <p>Chúng tôi cam kết thi công đúng tiến độ, vệ sinh sạch sẽ sau khi hoàn thiện và bảo hành màu sơn lên đến 5 năm.</p>
+      </div>
+    )
+  },
+  {
+    title: "Báo Giá Thi Công Trần Thả Tấm Nhựa Giá Rẻ Tại Hà Nội",
+    description: "Trần nhựa Nano, trần thả tấm nhựa chống nước tuyệt đối, mẫu mã đa dạng, độ bền trên 20 năm.",
+    date: "01/04/2025",
+    category: "Báo giá",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Trần thả tấm nhựa (Trần nhựa 600x600) là lựa chọn tiết kiệm và bền bỉ cho các khu vực có độ ẩm cao như nhà vệ sinh, ban công hoặc nhà xưởng. Vật liệu nhựa PVC cao cấp giúp chống nước 100%.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Ưu điểm nổi bật:</h5>
+          <ul className="space-y-1 text-sm">
+            <li>• Chống nước, chống mối mọt tuyệt đối.</li>
+            <li>• Không bị cong vênh, co ngót theo thời gian.</li>
+            <li>• Thi công cực nhanh, dễ dàng sửa chữa đường điện.</li>
+            <li>• Giá thành rẻ hơn so với trần thạch cao chìm.</li>
+          </ul>
+        </div>
+        <p>Giá thi công trọn gói dao động từ <span className="font-bold text-primary">160k - 190k/m2</span> tùy vào loại tấm và diện tích thi công.</p>
+      </div>
+    )
+  },
+  {
+    title: "Báo Giá Thi Công Trần Thạch Cao Giá Rẻ Tại Hà Nội",
+    description: "Bảng giá thi công trần thạch cao khung xương Vĩnh Tường, Hà Nội. Cam kết giá tốt nhất thị trường.",
+    date: "28/03/2025",
+    category: "Báo giá",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Chúng tôi chuyên thi công trần thạch cao các loại với khung xương Vĩnh Tường, Hà Nội. Đây là dòng vật liệu phổ biến nhất với độ bền cao và tính thẩm mỹ vượt trội.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Đơn giá tham khảo (trên 50m2):</h5>
+          <ul className="space-y-1 text-sm">
+            <li className="flex justify-between"><span>• Trần phẳng (xương Hà Nội):</span> <span className="font-bold text-primary">150k - 170k/m2</span></li>
+            <li className="flex justify-between"><span>• Trần giật cấp (xương Vĩnh Tường):</span> <span className="font-bold text-primary">200k - 220k/m2</span></li>
+            <li className="flex justify-between"><span>• Trần thả tấm thạch cao:</span> <span className="font-bold text-primary">160k - 180k/m2</span></li>
+          </ul>
+        </div>
+        <p>Đơn giá thực tế có thể thay đổi tùy theo thiết kế phức tạp hay đơn giản. Vui lòng liên hệ để được khảo sát miễn phí.</p>
+      </div>
+    )
+  },
+  {
+    title: "Phá Dỡ Trần Thạch Cao Giá Rẻ Tại Hà Nội",
+    description: "Dịch vụ phá dỡ, cải tạo trần vách thạch cao cũ nhanh chóng, an toàn, hỗ trợ vận chuyển phế thải.",
+    date: "25/03/2025",
+    category: "Sửa chữa",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Trong quá trình cải tạo sửa chữa nhà, việc phá dỡ trần cũ cần thực hiện cẩn thận để không ảnh hưởng đến hệ thống điện nước ngầm. Chúng tôi cung cấp dịch vụ phá dỡ chuyên nghiệp, trọn gói.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Dịch vụ bao gồm:</h5>
+          <ul className="space-y-1 text-sm">
+            <li>• Tháo dỡ tấm thạch cao và khung xương.</li>
+            <li>• Cắt tỉa đường điện, bảo vệ đèn LED.</li>
+            <li>• Thu gom và vận chuyển phế thải xây dựng.</li>
+            <li>• Trả lại mặt bằng sạch sẽ để thi công mới.</li>
+          </ul>
+        </div>
+        <p>Chi phí phá dỡ thường dao động từ <span className="font-bold text-primary">30k - 50k/m2</span> tùy vào độ cao và khối lượng công việc.</p>
+      </div>
+    )
+  },
+  {
+    title: "Sửa Trần Thạch Cao Chuyên Nghiệp. Vá Trần Nhanh Gọn",
+    description: "Xử lý triệt để các lỗi trần thạch cao bị nứt, thấm nước, ố vàng. Vá víu thẩm mỹ như mới.",
+    date: "20/03/2025",
+    category: "Sửa chữa",
+    content: (
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>Trần thạch cao gặp các sự cố như nứt khe nối, thấm dột tạo vết ố vàng, hoặc khung xương bị xệ sau nhiều năm sử dụng. Đội thợ chúng tôi chuyên xử lý nhanh các ca sửa chữa khó nhất.</p>
+        <div className="bg-secondary p-4 rounded-xl space-y-2">
+          <h5 className="font-bold text-charcoal">Các hạng mục sửa chữa:</h5>
+          <ul className="space-y-1 text-sm">
+            <li>• Vá lỗ khoét đèn, lỗ thăm trần cũ.</li>
+            <li>• Xử lý triệt để vết nứt dọc khung xương.</li>
+            <li>• Thay thế tấm thạch cao bị mục nát do ngấm nước.</li>
+            <li>• Sơn bả lại vùng sửa chữa, cam kết không lộ vết vá.</li>
+          </ul>
+        </div>
+        <p>Giá sửa chữa phụ thuộc vào độ khó, chúng tôi sẽ báo giá chi tiết sau khi khảo sát thực tế tại công trình.</p>
+      </div>
+    )
+  }
+];
+
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [galleryFilter, setGalleryFilter] = useState("all");
+  const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -235,12 +362,12 @@ const Index = () => {
                 <div className="w-14 h-14 bg-accent flex items-center justify-center rounded-xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <Layout className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-bold mb-4">Thi công trần thạch cao</h4>
-                <p className="text-muted-foreground mb-6">Trần thạch cao không chỉ thẩm mỹ mà còn chống nóng, cách âm tốt. Phù hợp cho phòng khách, phòng ngủ và văn phòng.</p>
+                <h4 className="text-2xl font-bold mb-4">Thi công trần vách thạch cao</h4>
+                <p className="text-muted-foreground mb-6">Trần vách thạch cao không chỉ thẩm mỹ mà còn chống nóng, cách âm tốt. Phù hợp cho phòng khách, phòng ngủ và văn phòng.</p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần thạch cao giật cấp</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần thả tiêu chuẩn</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần phẳng hiện đại</li>
+                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần giật cấp, trần phẳng</li>
+                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Vách ngăn thạch cao cách âm</li>
+                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần thả tấm nhựa Nano</li>
                 </ul>
 
               </motion.div>
@@ -277,12 +404,12 @@ const Index = () => {
                 <div className="w-14 h-14 bg-accent flex items-center justify-center rounded-xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <Paintbrush className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-bold mb-4">Sơn tường nhà trọn gói</h4>
+                <h4 className="text-2xl font-bold mb-4">Sơn nhà & Chống thấm</h4>
                 <p className="text-muted-foreground mb-6">Sơn nội thất, ngoại thất chất lượng cao bảo vệ ngôi nhà khỏi ẩm mốc và mang lại vẻ đẹp đẳng cấp.</p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Sơn nội/ngoại thất cao cấp</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Sơn chống thấm tường</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Phối màu sơn chuẩn</li>
+                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Xử lý chống thấm ngược</li>
+                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Phối màu sơn phong thủy</li>
                 </ul>
 
               </motion.div>
@@ -433,6 +560,115 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* ================= ARTICLES SECTION ================= */}
+        <section id="articles" className="py-24 bg-white">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">KIẾN THỨC & BÁO GIÁ</h2>
+              <h3 className="text-3xl md:text-5xl font-bold leading-tight">Thông tin hữu ích cho ngôi nhà bạn</h3>
+              <p className="text-lg text-muted-foreground">
+                Chúng tôi chia sẻ kinh nghiệm thi công và cập nhật báo giá mới nhất để quý khách hàng dễ dàng tham khảo.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="h-full border-none shadow-soft hover:shadow-lg transition-all overflow-hidden group flex flex-col">
+                    <div className="p-6 flex-grow space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-primary uppercase bg-primary/10 px-3 py-1 rounded-full">
+                          {article.category}
+                        </span>
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          <Zap className="w-3 h-3" /> {article.date}
+                        </span>
+                      </div>
+                      <h4 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2">
+                        {article.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm line-clamp-3">
+                        {article.description}
+                      </p>
+                    </div>
+                    <div className="px-6 pb-6 mt-auto">
+                      <Button 
+                        variant="link" 
+                        className="p-0 h-auto text-primary font-bold hover:no-underline group"
+                        onClick={() => setSelectedArticle(article)}
+                      >
+                        <span className="flex items-center gap-2">
+                          Xem chi tiết <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      </Button>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <Button asChild size="lg" variant="outline" className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-10">
+                <a href="#contact">Tư vấn báo giá ngay</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= ARTICLE MODAL ================= */}
+        <AnimatePresence>
+          {selectedArticle && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+              onClick={() => setSelectedArticle(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: 20 }}
+                className="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="bg-primary p-8 text-white relative">
+                  <button 
+                    onClick={() => setSelectedArticle(null)}
+                    className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                  >
+                    <Layout className="w-5 h-5 rotate-45" />
+                  </button>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[10px] uppercase font-bold tracking-widest bg-white/20 px-2 py-1 rounded">
+                      {selectedArticle.category}
+                    </span>
+                    <span className="text-xs opacity-80">{selectedArticle.date}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold">{selectedArticle.title}</h3>
+                </div>
+                <div className="p-8 max-h-[60vh] overflow-y-auto">
+                  {selectedArticle.content}
+                </div>
+                <div className="p-6 bg-secondary flex justify-between items-center">
+                  <p className="text-xs text-muted-foreground italic">* Lưu ý: Giá trên là giá tham khảo.</p>
+                  <Button asChild onClick={() => setSelectedArticle(null)}>
+                    <a href="#contact" className="flex items-center gap-2">
+                      Liên hệ báo giá <Zap className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* ================= CONTACT ================= */}
         <section id="contact" className="py-24 bg-background">
