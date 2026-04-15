@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -8,12 +7,12 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Trang Chủ", href: "#hero" },
-    { name: "Giới Thiệu", href: "#about" },
-    { name: "Dịch Vụ", href: "#services" },
-    { name: "Bảng Giá", href: "#pricing" },
-    { name: "Công Trình", href: "#gallery" },
-    { name: "Liên Hệ", href: "#contact" },
+    { name: "Trang Chủ", to: "/" },
+    { name: "Dịch Vụ", to: "/dich-vu" },
+    { name: "Bảng Giá", to: "/bao-gia" },
+    { name: "Công Trình", to: "/cong-trinh" },
+    { name: "Bài Viết", to: "/bai-viet" },
+    { name: "Liên Hệ", to: "/lien-he" },
   ];
 
   return (
@@ -29,16 +28,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${location.hash === item.href
+                to={item.to}
+                className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.to
                   ? "text-primary"
                   : "text-muted-foreground"
                   }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -63,17 +62,17 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background px-4 py-4 space-y-4">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.to}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block text-sm font-medium transition-colors hover:text-primary ${location.hash === item.href
+              className={`block text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.to
                 ? "text-primary"
                 : "text-muted-foreground"
                 }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

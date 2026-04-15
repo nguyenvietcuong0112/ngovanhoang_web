@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import { articles, type Article } from "@/data/articles";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2,
@@ -22,11 +23,9 @@ import {
 
 // ================= ASSETS =================
 import hero_ceiling from "/src/assets/hero-ceiling.png";
-import hero_painting from "/src/assets/hero-painting.png";
 import hero_renovation from "/src/assets/hero-renovation.png";
+import hero_decor from "/src/assets/hero-construction-modern.jpg";
 import feat_ceiling from "/src/assets/feat-ceiling.png";
-import feat_painting from "/src/assets/feat-painting.png";
-import about_img from "/src/assets/about-home.png";
 
 const slides = [
   {
@@ -39,7 +38,7 @@ const slides = [
     title: "Hoàn thiện nội thất cơ bản với chất lượng vượt trội",
     subTitle: "Tận tâm trong từng chi tiết công trình",
     description: "Dịch vụ trọn gói từ khâu khảo sát đến thi công hoàn thiện, đảm bảo thẩm mỹ và độ bền cao nhất cho ngôi nhà của bạn.",
-    image: hero_painting,
+    image: hero_decor,
   },
   {
     title: "Mang phong thái hiện đại vào không gian sống của bạn",
@@ -49,136 +48,10 @@ const slides = [
   }
 ];
 
-const articles = [
-  {
-    title: "Báo Giá Vách Thạch Cao Cách Âm Mới Nhất 2025",
-    description: "Cập nhật đơn giá thi công vách thạch cao cách âm, vách ngăn chống cháy cho văn phòng, phòng hát và nhà ở.",
-    date: "05/04/2025",
-    category: "Báo giá",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Vách thạch cao cách âm là giải pháp tối ưu cho không gian cần sự yên tĩnh như phòng ngủ, phòng làm việc, đặc biệt là các phòng karaoke hay studio chuyên nghiệp. Kết hợp cùng bông thủy tinh hoặc bông khoáng, vách thạch cao có khả năng giảm tiếng ồn cực tốt.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Bảng giá thi công (tham khảo):</h5>
-          <ul className="space-y-1 text-sm">
-            <li className="flex justify-between"><span>• Loại cơ bản (1 lớp + bông thủy tinh):</span> <span className="font-bold text-primary">270k - 320k/m2</span></li>
-            <li className="flex justify-between"><span>• Loại cao cấp (2 lớp + bông khoáng):</span> <span className="font-bold text-primary">350k - 450k/m2</span></li>
-            <li className="flex justify-between"><span>• Chống cháy chuyên dụng:</span> <span className="font-bold text-primary">Liên hệ trực tiếp</span></li>
-          </ul>
-        </div>
-        <p>Lưu ý: Đơn giá đã bao gồm nhân công và vật tư cơ bản, chưa bao gồm sơn bả hoàn thiện và VAT.</p>
-      </div>
-    )
-  },
-  {
-    title: "Dịch Vụ Sơn Nhà Đẹp Tại Hà Nội",
-    description: "Giải pháp sơn nhà trọn gói chuyên nghiệp, tư vấn phối màu chuẩn phong thủy, thi công nhanh gọn, sạch sẽ.",
-    date: "03/04/2025",
-    category: "Dịch vụ",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Dịch vụ sơn nhà trọn gói giúp thay đổi hoàn toàn diện mạo ngôi nhà. Chúng tôi sử dụng các dòng sơn cao cấp như Dulux, Kova, Jotun để đảm bảo độ bền màu và khả năng chống thấm, chống nấm mốc tuyệt vời.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Giá nhân công sơn (tham khảo):</h5>
-          <ul className="space-y-1 text-sm">
-            <li className="flex justify-between"><span>• Sơn lại nhà (không bả):</span> <span className="font-bold text-primary">10k - 15k/m2</span></li>
-            <li className="flex justify-between"><span>• Sơn lại (có dặm vá):</span> <span className="font-bold text-primary">17k - 20k/m2</span></li>
-            <li className="flex justify-between"><span>• Sơn mới hoàn toàn:</span> <span className="font-bold text-primary">25k - 35k/m2</span></li>
-          </ul>
-        </div>
-        <p>Chúng tôi cam kết thi công đúng tiến độ, vệ sinh sạch sẽ sau khi hoàn thiện và bảo hành màu sơn lên đến 5 năm.</p>
-      </div>
-    )
-  },
-  {
-    title: "Báo Giá Thi Công Trần Thả Tấm Nhựa Giá Rẻ Tại Hà Nội",
-    description: "Trần nhựa Nano, trần thả tấm nhựa chống nước tuyệt đối, mẫu mã đa dạng, độ bền trên 20 năm.",
-    date: "01/04/2025",
-    category: "Báo giá",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Trần thả tấm nhựa (Trần nhựa 600x600) là lựa chọn tiết kiệm và bền bỉ cho các khu vực có độ ẩm cao như nhà vệ sinh, ban công hoặc nhà xưởng. Vật liệu nhựa PVC cao cấp giúp chống nước 100%.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Ưu điểm nổi bật:</h5>
-          <ul className="space-y-1 text-sm">
-            <li>• Chống nước, chống mối mọt tuyệt đối.</li>
-            <li>• Không bị cong vênh, co ngót theo thời gian.</li>
-            <li>• Thi công cực nhanh, dễ dàng sửa chữa đường điện.</li>
-            <li>• Giá thành rẻ hơn so với trần thạch cao chìm.</li>
-          </ul>
-        </div>
-        <p>Giá thi công trọn gói dao động từ <span className="font-bold text-primary">160k - 190k/m2</span> tùy vào loại tấm và diện tích thi công.</p>
-      </div>
-    )
-  },
-  {
-    title: "Báo Giá Thi Công Trần Thạch Cao Giá Rẻ Tại Hà Nội",
-    description: "Bảng giá thi công trần thạch cao khung xương Vĩnh Tường, Hà Nội. Cam kết giá tốt nhất thị trường.",
-    date: "28/03/2025",
-    category: "Báo giá",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Chúng tôi chuyên thi công trần thạch cao các loại với khung xương Vĩnh Tường, Hà Nội. Đây là dòng vật liệu phổ biến nhất với độ bền cao và tính thẩm mỹ vượt trội.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Đơn giá tham khảo (trên 50m2):</h5>
-          <ul className="space-y-1 text-sm">
-            <li className="flex justify-between"><span>• Trần phẳng (xương Hà Nội):</span> <span className="font-bold text-primary">150k - 170k/m2</span></li>
-            <li className="flex justify-between"><span>• Trần giật cấp (xương Vĩnh Tường):</span> <span className="font-bold text-primary">200k - 220k/m2</span></li>
-            <li className="flex justify-between"><span>• Trần thả tấm thạch cao:</span> <span className="font-bold text-primary">160k - 180k/m2</span></li>
-          </ul>
-        </div>
-        <p>Đơn giá thực tế có thể thay đổi tùy theo thiết kế phức tạp hay đơn giản. Vui lòng liên hệ để được khảo sát miễn phí.</p>
-      </div>
-    )
-  },
-  {
-    title: "Phá Dỡ Trần Thạch Cao Giá Rẻ Tại Hà Nội",
-    description: "Dịch vụ phá dỡ, cải tạo trần vách thạch cao cũ nhanh chóng, an toàn, hỗ trợ vận chuyển phế thải.",
-    date: "25/03/2025",
-    category: "Sửa chữa",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Trong quá trình cải tạo sửa chữa nhà, việc phá dỡ trần cũ cần thực hiện cẩn thận để không ảnh hưởng đến hệ thống điện nước ngầm. Chúng tôi cung cấp dịch vụ phá dỡ chuyên nghiệp, trọn gói.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Dịch vụ bao gồm:</h5>
-          <ul className="space-y-1 text-sm">
-            <li>• Tháo dỡ tấm thạch cao và khung xương.</li>
-            <li>• Cắt tỉa đường điện, bảo vệ đèn LED.</li>
-            <li>• Thu gom và vận chuyển phế thải xây dựng.</li>
-            <li>• Trả lại mặt bằng sạch sẽ để thi công mới.</li>
-          </ul>
-        </div>
-        <p>Chi phí phá dỡ thường dao động từ <span className="font-bold text-primary">30k - 50k/m2</span> tùy vào độ cao và khối lượng công việc.</p>
-      </div>
-    )
-  },
-  {
-    title: "Sửa Trần Thạch Cao Chuyên Nghiệp. Vá Trần Nhanh Gọn",
-    description: "Xử lý triệt để các lỗi trần thạch cao bị nứt, thấm nước, ố vàng. Vá víu thẩm mỹ như mới.",
-    date: "20/03/2025",
-    category: "Sửa chữa",
-    content: (
-      <div className="space-y-4 text-muted-foreground leading-relaxed">
-        <p>Trần thạch cao gặp các sự cố như nứt khe nối, thấm dột tạo vết ố vàng, hoặc khung xương bị xệ sau nhiều năm sử dụng. Đội thợ chúng tôi chuyên xử lý nhanh các ca sửa chữa khó nhất.</p>
-        <div className="bg-secondary p-4 rounded-xl space-y-2">
-          <h5 className="font-bold text-charcoal">Các hạng mục sửa chữa:</h5>
-          <ul className="space-y-1 text-sm">
-            <li>• Vá lỗ khoét đèn, lỗ thăm trần cũ.</li>
-            <li>• Xử lý triệt để vết nứt dọc khung xương.</li>
-            <li>• Thay thế tấm thạch cao bị mục nát do ngấm nước.</li>
-            <li>• Sơn bả lại vùng sửa chữa, cam kết không lộ vết vá.</li>
-          </ul>
-        </div>
-        <p>Giá sửa chữa phụ thuộc vào độ khó, chúng tôi sẽ báo giá chi tiết sau khi khảo sát thực tế tại công trình.</p>
-      </div>
-    )
-  }
-];
-
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [galleryFilter, setGalleryFilter] = useState("all");
-  const [selectedArticle, setSelectedArticle] = useState<typeof articles[0] | null>(null);
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -198,14 +71,15 @@ const Index = () => {
     { title: "Trần thạch cao phòng khách", category: "nha-o", image: hero_ceiling },
     { title: "Hệ thống trần giật cấp hiện đại", category: "chung-cu", image: feat_ceiling },
     { title: "Phòng ngủ ấm cúng với trần phẳng", category: "nha-o", image: hero_renovation },
-    { title: "Văn phòng làm việc sang trọng", category: "van-phong", image: feat_painting },
-    { title: "Sơn bả mịn màng cho căn hộ", category: "chung-cu", image: about_img },
-    { title: "Hoàn thiện tường nhà phố", category: "nha-o", image: hero_painting },
+    { title: "Văn phòng làm việc sang trọng", category: "van-phong", image: hero_decor },
+    { title: "Sơn bả mịn màng cho căn hộ", category: "chung-cu", image: feat_ceiling },
+    { title: "Hoàn thiện tường nhà phố", category: "nha-o", image: hero_renovation },
   ];
 
   const filteredGallery = galleryFilter === "all"
     ? galleryItems
     : galleryItems.filter(item => item.category === galleryFilter);
+  const showExtendedHome = false;
 
   return (
     <div className="min-h-screen bg-background text-foreground scroll-smoothSelection">
@@ -266,10 +140,10 @@ const Index = () => {
                 className="flex flex-wrap gap-4 pt-4"
               >
                 <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary-hover text-white px-8 h-12 text-base">
-                  <a href="#pricing">Xem báo giá</a>
+                  <Link to="/bao-gia">Xem báo giá</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="rounded-full border-2 border-white text-white hover:bg-white hover:text-primary-hover px-8 h-12 text-base backdrop-blur-sm bg-black/10">
-                  <a href="#contact">Liên hệ tư vấn</a>
+                  <Link to="/lien-he">Liên hệ tư vấn</Link>
                 </Button>
               </motion.div>
             </div>
@@ -299,7 +173,7 @@ const Index = () => {
               >
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 -z-10 rounded-lg" />
                 <img
-                  src={about_img}
+                  src={hero_decor}
                   alt="Đội ngũ Sửa nhà Hà Nội"
                   className="rounded-2xl shadow-premium border-8 border-secondary object-cover w-full h-[500px]"
                 />
@@ -417,6 +291,33 @@ const Index = () => {
           </div>
         </section>
 
+        <section className="py-16 bg-secondary">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+              <h3 className="text-3xl md:text-4xl font-bold">Khám phá nhanh theo nhu cầu</h3>
+              <p className="text-muted-foreground">
+                Để trang chủ gọn hơn, các nội dung chi tiết đã được tách sang từng trang riêng.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
+                <Link to="/dich-vu">Dịch vụ</Link>
+              </Button>
+              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
+                <Link to="/bao-gia">Bảng giá</Link>
+              </Button>
+              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
+                <Link to="/cong-trinh">Công trình</Link>
+              </Button>
+              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
+                <Link to="/bai-viet">Bài viết</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {showExtendedHome && (
+          <>
         {/* ================= PRICING TABLES ================= */}
         <section id="pricing" className="py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
@@ -708,7 +609,7 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">VP Đại diện</p>
-                      <p className="text-xl font-bold tracking-tight">Vân Nội, Phúc Thịnh, Hà Nội</p>
+                      <p className="text-xl font-bold tracking-tight">Hồ Tây, Hà Nội</p>
                     </div>
                   </div>
                 </div>
@@ -825,6 +726,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+          </>
+        )}
       </main>
 
       <Footer />

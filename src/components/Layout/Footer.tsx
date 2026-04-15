@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -38,24 +38,24 @@ const Footer = () => {
             <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Dịch Vụ Chính</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
+                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-primary rounded-full" /> Thi công trần thạch cao
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
+                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-primary rounded-full" /> Sơn bả matit chuyên nghiệp
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
+                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-primary rounded-full" /> Sơn nội ngoại thất
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
+                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-primary rounded-full" /> Vách ngăn thạch cao
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Thông Tin Liên Hệ</h3>
             <div className="space-y-4 text-sm text-muted-foreground">
-              <p className="flex items-center gap-3">📍 <span className="font-medium text-foreground">Địa chỉ:</span> Vân Nội, Phúc Thịnh, Hà Nội</p>
+              <p className="flex items-center gap-3">📍 <span className="font-medium text-foreground">Địa chỉ:</span> Hồ Tây, Hà Nội</p>
               <p className="flex items-center gap-3">📞 <span className="font-medium text-foreground">Hotline:</span> 0388.423.600</p>
               <p className="flex items-center gap-3">📧 <span className="font-medium text-foreground">Email:</span> suanhataihanoi368@gmail.com</p>
               <p className="flex items-center gap-3">✨ <span className="font-medium text-foreground">Làm việc:</span> 24/7 (Cả ngày lễ)</p>
@@ -77,8 +77,8 @@ const Footer = () => {
             © 2026 Sửa nhà Hà Nội – Chuyên gia thi công trần & sơn tường. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-primary">Chính sách bảo hành</a>
-            <a href="#" className="hover:text-primary">Quy trình thi công</a>
+            <Link to="/bao-gia" className="hover:text-primary">Chính sách bảo hành</Link>
+            <Link to="/dich-vu" className="hover:text-primary">Quy trình thi công</Link>
           </div>
         </div>
       </div>
