@@ -7,22 +7,22 @@ import { CheckCircle2, Hammer, Layout, Paintbrush } from "lucide-react";
 
 const services = [
   {
-    title: "Thi cong tran vach thach cao",
+    title: "Thi công trần vách thạch cao",
     icon: Layout,
-    items: ["Tran giat cap, tran phang", "Vach ngan cach am", "Tran tha tam nhua"],
-    description: "Giai phap tham my va ben bi cho nha o, chung cu va van phong."
+    items: ["Trần giật cấp, trần phẳng", "Vách ngăn cách âm", "Trần thả tấm nhựa"],
+    description: "Giải pháp thẩm mỹ và bền bỉ cho nhà ở, chung cư và văn phòng."
   },
   {
-    title: "Son ba tuong chuyen sau",
+    title: "Sơn bả tường chuyên sâu",
     icon: Hammer,
-    items: ["Ba matit min dep", "Xu ly be mat tuong cu", "Lam phang triet de"],
-    description: "Giup be mat tuong min, tang do ben va do bam lop son."
+    items: ["Bả matit mịn đẹp", "Xử lý bề mặt tường cũ", "Làm phẳng triệt để"],
+    description: "Giúp bề mặt tường mịn, tăng độ bền và độ bám lớp sơn."
   },
   {
-    title: "Son nha va chong tham",
+    title: "Sơn nhà và chống thấm",
     icon: Paintbrush,
-    items: ["Son noi ngoai that", "Xu ly chong tham nguoc", "Tu van phoi mau"],
-    description: "Bao ve ngoi nha khoi am moc va nang tam tham my tong the."
+    items: ["Sơn nội ngoại thất", "Xử lý chống thấm ngược", "Tư vấn phối màu"],
+    description: "Bảo vệ ngôi nhà khỏi ẩm mốc và nâng tầm thẩm mỹ tổng thể."
   }
 ];
 
@@ -33,9 +33,9 @@ const Services = () => {
       <main className="py-20">
         <section className="container mx-auto px-4 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl md:text-5xl font-bold">Dich Vu Thi Cong</h1>
+            <h1 className="text-3xl md:text-5xl font-bold">Dịch Vụ Thi Công</h1>
             <p className="text-muted-foreground">
-              Tap trung vao cac hang muc co nhu cau cao nhat de toi uu tien do va chi phi.
+              Tập trung vào các hạng mục có nhu cầu cao nhất để tối ưu tiến độ và chi phí.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ const Services = () => {
 
           <div className="text-center">
             <Button asChild size="lg" className="rounded-full px-8">
-              <Link to="/lien-he">Nhan tu van dich vu</Link>
+              <Link to="/lien-he">Nhận tư vấn dịch vụ</Link>
             </Button>
           </div>
         </section>
