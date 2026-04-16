@@ -7,10 +7,12 @@ import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingContact from "./components/Layout/FloatingContact";
 
 const App = () => (
   <BrowserRouter>
     <ScrollToTop />
+    <FloatingContact />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/dich-vu" element={<Services />} />
