@@ -51,7 +51,7 @@ const slides = [
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [galleryFilter, setGalleryFilter] = useState("all");
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [galleryFilter, setGalleryFilter] = useState("all");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -501,13 +501,13 @@ const Index = () => {
                     </div>
                     <div className="px-6 pb-6 mt-auto">
                       <Button 
+                        asChild
                         variant="link" 
                         className="p-0 h-auto text-primary font-bold hover:no-underline group"
-                        onClick={() => setSelectedArticle(article)}
                       >
-                        <span className="flex items-center gap-2">
+                        <Link to={`/bai-viet/${article.slug}`} className="flex items-center gap-2">
                           Xem chi tiết <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </span>
+                        </Link>
                       </Button>
                     </div>
                   </Card>
@@ -523,53 +523,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ================= ARTICLE MODAL ================= */}
-        <AnimatePresence>
-          {selectedArticle && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-              onClick={() => setSelectedArticle(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="bg-white w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl relative"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="bg-primary p-8 text-white relative">
-                  <button 
-                    onClick={() => setSelectedArticle(null)}
-                    className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-                  >
-                    <Layout className="w-5 h-5 rotate-45" />
-                  </button>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] uppercase font-bold tracking-widest bg-white/20 px-2 py-1 rounded">
-                      {selectedArticle.category}
-                    </span>
-                    <span className="text-xs opacity-80">{selectedArticle.date}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold">{selectedArticle.title}</h3>
-                </div>
-                <div className="p-8 max-h-[60vh] overflow-y-auto">
-                  {selectedArticle.content}
-                </div>
-                <div className="p-6 bg-secondary flex justify-between items-center">
-                  <p className="text-xs text-muted-foreground italic">* Lưu ý: Giá trên là giá tham khảo.</p>
-                  <Button asChild onClick={() => setSelectedArticle(null)}>
-                    <a href="#contact" className="flex items-center gap-2">
-                      Liên hệ báo giá <Zap className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* ================= CONTACT ================= */}
         <section id="contact" className="py-24 bg-background">
