@@ -1,5 +1,11 @@
 import type { ReactNode } from "react";
 
+// Import images for production build
+import heroCeiling from "@/assets/hero-ceiling.png";
+import heroRenovation from "@/assets/hero-renovation.png";
+import heroConstruction from "@/assets/hero-construction-modern.jpg";
+import featCeiling from "@/assets/feat-ceiling.png";
+
 export type Article = {
   title: string;
   description: string;
@@ -17,7 +23,7 @@ export const articles: Article[] = [
     date: "16/04/2026",
     category: "Giá thi công",
     slug: "bao-gia-tran-vach-thach-cao-2026",
-    image: "/src/assets/hero-ceiling.png",
+    image: heroCeiling,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
@@ -66,7 +72,7 @@ export const articles: Article[] = [
     date: "16/04/2026",
     category: "Cải tạo nhà",
     slug: "giai-phap-sua-chua-nang-cap-nha",
-    image: "/src/assets/hero-renovation.png",
+    image: heroRenovation,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
@@ -108,7 +114,7 @@ export const articles: Article[] = [
     date: "12/03/2026",
     category: "Vách ngăn",
     slug: "bao-gia-vach-thach-cao-1-mat-2-mat",
-    image: "/src/assets/feat-ceiling.png",
+    image: featCeiling,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
@@ -140,7 +146,7 @@ export const articles: Article[] = [
     date: "08/03/2026",
     category: "Trần nhựa",
     slug: "bao-gia-tran-nhua-nano-pvc-2026",
-    image: "/src/assets/hero-construction-modern.jpg",
+    image: heroConstruction,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
@@ -163,69 +169,12 @@ export const articles: Article[] = [
     )
   },
   {
-    title: "Bảng Báo Giá Sơn Nhà Trọn Gói Mới Nhất 2026",
-    description: "Báo giá sơn nhà theo m2, đầy đủ vật tư and nhân công, áp dụng cho nhà ở dân dụng and văn phòng.",
-    date: "02/03/2026",
-    category: "Sơn nhà",
-    slug: "bao-gia-son-nha-tron-goi-2026",
-    image: "/src/assets/hero-painting.png",
-    content: (
-      <div className="space-y-6 text-muted-foreground leading-relaxed">
-        <div className="space-y-4">
-          <h3 className="text-2xl font-bold text-charcoal">Thay đổi diện mạo ngôi nhà bằng màu sơn mới</h3>
-          <p>Sơn nhà không chỉ là trang trí mà còn là lớp bảo vệ tường khỏi các tác động của môi trường. Chúng tôi cung cấp dịch vụ sơn nhà chuyên nghiệp với hệ thống sơn từ các thương hiệu lớn như <strong>Dulux, Jotun, Kova</strong>.</p>
-        </div>
-
-        <div className="bg-secondary p-6 rounded-2xl">
-          <h4 className="font-bold text-charcoal mb-4">Các bước thi công chuẩn kỹ thuật:</h4>
-          <ol className="space-y-3 text-sm list-decimal pl-5">
-            <li><strong>Vệ sinh bề mặt:</strong> Cạo sạch lớp sơn cũ, xử lý vết nứt và bụi bẩn.</li>
-            <li><strong>Bả Matit (nếu cần):</strong> Làm phẳng bề mặt tường cho lớp sơn mịn đẹp nhất.</li>
-            <li><strong>Sơn lót kháng kiềm:</strong> Tăng độ bám dính và chống ố vàng cho lớp sơn phủ.</li>
-            <li><strong>Sơn phủ 2 lớp:</strong> Đảm bảo màu sắc lên chuẩn, bền màu theo thời gian.</li>
-          </ol>
-        </div>
-
-        <p>Chúng tôi cam kết sử dụng <strong>Sơn Chính Hãng 100%</strong>, phát hiện sơn giả đền bù gấp 10 lần giá trị công trình.</p>
-      </div>
-    )
-  },
-  {
-    title: "Thi Công Chống Thấm Nhà Ở Chuyên Nghiệp",
-    description: "Giải pháp chống thấm sân thượng, tường ngoài trời, nhà vệ sinh giúp ngăn thấm dột lâu dài.",
-    date: "10/03/2026",
-    category: "Chống thấm",
-    slug: "thi-cong-chong-tham-chuyen-nghiep",
-    image: "/src/assets/about-home.png",
-    content: (
-      <div className="space-y-6 text-muted-foreground leading-relaxed">
-        <div className="space-y-4">
-          <h3 className="text-2xl font-bold text-charcoal">Đừng để thấm dột phá hủy ngôi nhà của bạn</h3>
-          <p>Thấm dột là "kẻ thù âm thầm" làm giảm tuổi thọ công trình và gây ẩm mốc có hại cho sức khỏe. Việc xử lý chống thấm cần được thực hiện dứt điểm ngay từ đầu bằng các phương pháp chuyên sâu.</p>
-        </div>
-
-        <div className="space-y-3">
-          <h4 className="font-bold text-charcoal">Hạng mục chống thấm phổ biến:</h4>
-          <ul className="space-y-2">
-            <li className="flex gap-2"><strong>- Chống thấm sân thượng:</strong> Dùng màng khò hoặc sơn Epoxy chống tia UV.</li>
-            <li className="flex gap-2"><strong>- Chống thấm nhà vệ sinh:</strong> Xử lý cổ ống và sàn bằng Sika Latex cao cấp.</li>
-            <li className="flex gap-2"><strong>- Chống thấm tường ngoài:</strong> Sơn CT11A trộn xi măng hạn chế tối đa nứt chân chim.</li>
-          </ul>
-        </div>
-
-        <div className="bg-primary/5 p-6 rounded-2xl border border-primary/20 italic">
-          "Chúng tôi bảo hành dịch vụ chống thấm từ 2-5 năm, cam kết xử lý lại hoàn toàn miễn phí nếu có hiện tượng thấm lại."
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Sửa Trần Thạch Cao Chuyên Nghiệp, Vá Trần Nhanh Gọn",
     description: "Xử lý triệt để các lỗi trần thạch cao bị nứt, thấm nước, ố vàng and xệ trần.",
     date: "20/03/2026",
     category: "Sửa trần",
     slug: "sua-tran-thach-cao-chuyen-nghiep",
-    image: "/src/assets/feat-ceiling.png",
+    image: featCeiling,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
