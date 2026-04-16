@@ -51,7 +51,6 @@ const slides = [
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [galleryFilter, setGalleryFilter] = useState("all");
-  const [galleryFilter, setGalleryFilter] = useState("all");
 
   useEffect(() => {
     const timer = setInterval(() => {
