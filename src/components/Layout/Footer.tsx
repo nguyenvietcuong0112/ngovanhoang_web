@@ -64,7 +64,16 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-widest text-slate-100">Thông Tin Liên Hệ</h3>
             <div className="space-y-4 text-sm text-slate-400">
-              <p className="flex items-center gap-3">📍 <span className="font-medium text-slate-100">Địa chỉ:</span> Hồ Tây, Hà Nội</p>
+              <div className="flex items-start gap-3">
+                <span>📍</span>
+                <div className="space-y-1">
+                  <p><span className="font-medium text-slate-100">Địa chỉ:</span></p>
+                  <p>107 Ngọc Hồi, Hoàng Liệt, Hoàng Mai.</p>
+                  <p>02/103 Phạm Ngọc Thạch, Đống Đa.</p>
+                  <p>26 Mễ Trì Hạ, Từ Liêm.</p>
+                  <p>196 Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm.</p>
+                </div>
+              </div>
               <p className="flex items-center gap-3">📞 <span className="font-medium text-slate-100">Hotline:</span> 0388.423.600</p>
               <p className="flex items-center gap-3">📧 <span className="font-medium text-slate-100">Email:</span> suanhataihanoi368@gmail.com</p>
               <p className="flex items-center gap-3">✨ <span className="font-medium text-slate-100">Làm việc:</span> 24/7 (Cả ngày lễ)</p>

@@ -39,7 +39,15 @@ const Contact = () => {
               <div className="space-y-4 text-sm">
                 <p className="flex items-center gap-3"><Phone className="w-4 h-4 text-primary" /> 0388.423.600</p>
                 <p className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> suanhataihanoi368@gmail.com</p>
-                <p className="flex items-center gap-3"><MapPin className="w-4 h-4 text-primary" /> Hồ Tây, Hà Nội</p>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-primary mt-0.5" />
+                  <div className="space-y-1">
+                    <p>107 Ngọc Hồi, Hoàng Liệt, Hoàng Mai.</p>
+                    <p>02/103 Phạm Ngọc Thạch, Đống Đa.</p>
+                    <p>26 Mễ Trì Hạ, Từ Liêm.</p>
+                    <p>196 Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm.</p>
+                  </div>
+                </div>
               </div>
             </div>
 

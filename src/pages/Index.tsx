@@ -561,7 +561,12 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">VP Đại diện</p>
-                      <p className="text-xl font-bold tracking-tight">Hồ Tây, Hà Nội</p>
+                      <div className="space-y-1">
+                        <p className="text-base font-bold tracking-tight">107 Ngọc Hồi, Hoàng Liệt, Hoàng Mai.</p>
+                        <p className="text-base font-bold tracking-tight">02/103 Phạm Ngọc Thạch, Đống Đa.</p>
+                        <p className="text-base font-bold tracking-tight">26 Mễ Trì Hạ, Từ Liêm.</p>
+                        <p className="text-base font-bold tracking-tight">196 Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
