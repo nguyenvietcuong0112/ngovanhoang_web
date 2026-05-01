@@ -4,12 +4,35 @@ import Footer from "@/components/Layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { articles } from "@/data/articles";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Zap, Clock, Tag } from "lucide-react";
 
 const Articles = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Bài viết sửa nhà Hà Nội: báo giá, kinh nghiệm thi công mới nhất"
+        description="Tổng hợp bài viết chuyên sâu về thi công trần thạch cao, sơn bả, cải tạo nhà và báo giá cập nhật tại Hà Nội."
+        keywords="bài viết sửa nhà hà nội, kinh nghiệm thi công trần thạch cao, báo giá sửa nhà, cải tạo nhà hà nội"
+        type="website"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Bài viết & kinh nghiệm sửa nhà Hà Nội",
+          url: `${window.location.origin}/bai-viet`,
+          description:
+            "Chia sẻ kinh nghiệm thi công, bảng giá và giải pháp sửa chữa nhà ở thực tế tại Hà Nội.",
+          publisher: {
+            "@type": "Organization",
+            name: "Sửa nhà Hà Nội",
+            logo: {
+              "@type": "ImageObject",
+              url: `${window.location.origin}/logo.png`,
+            },
+          },
+        }}
+      />
       <Header />
       <main className="py-24">
         <section className="container mx-auto px-4 lg:px-8 space-y-16">

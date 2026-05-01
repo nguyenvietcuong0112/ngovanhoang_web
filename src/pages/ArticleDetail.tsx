@@ -4,6 +4,7 @@ import Footer from "@/components/Layout/Footer";
 import { articles } from "@/data/articles";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Tag, ChevronRight, Phone, MessageSquare } from "lucide-react";
 
@@ -19,8 +20,72 @@ const ArticleDetail = () => {
     .filter((a) => a.slug !== slug)
     .slice(0, 3);
 
+  const articleUrl = `${window.location.origin}/bai-viet/${article.slug}`;
+  const dateParts = article.date.split("/");
+  const publishedDate =
+    dateParts.length === 3
+      ? `${dateParts[2]}-${dateParts[1].padStart(2, "0")}-${dateParts[0].padStart(2, "0")}`
+      : undefined;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={`${article.title} | Sửa nhà Hà Nội`}
+        description={article.description}
+        keywords={`${article.category}, sửa nhà hà nội, thi công trần thạch cao, cải tạo nhà`}
+        image={article.image}
+        url={articleUrl}
+        type="article"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            description: article.description,
+            image: article.image.startsWith("http")
+              ? article.image
+              : `${window.location.origin}${article.image}`,
+            datePublished: publishedDate,
+            mainEntityOfPage: articleUrl,
+            author: {
+              "@type": "Organization",
+              name: "Sửa nhà Hà Nội",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Sửa nhà Hà Nội",
+              logo: {
+                "@type": "ImageObject",
+                url: `${window.location.origin}/logo.png`,
+              },
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Trang chủ",
+                item: `${window.location.origin}/`,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Bài viết",
+                item: `${window.location.origin}/bai-viet`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: article.title,
+                item: articleUrl,
+              },
+            ],
+          },
+        ]}
+      />
       <Header />
       
       <main className="pt-24 pb-20">

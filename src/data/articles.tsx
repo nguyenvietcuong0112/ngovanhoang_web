@@ -5,9 +5,13 @@ import heroCeiling from "@/assets/hero-ceiling.png";
 import heroRenovation from "@/assets/hero-renovation.png";
 import heroConstruction from "@/assets/hero-construction-modern.jpg";
 import featCeiling from "@/assets/feat-ceiling.png";
+import featPainting from "@/assets/feat-painting.png";
 import ceilingDesign from "@/assets/modern-ceiling-design.png";
 import repairTools from "@/assets/drywall-tools.png";
 import beforeAfter from "@/assets/ceiling-before-after.png";
+import phado1 from "@/assets/phado1.jpeg";
+import phado2 from "@/assets/phado2.jpeg";
+import sonnha1 from "@/assets/sonnha1.jpg";
 
 export type Article = {
   title: string;
@@ -72,67 +76,85 @@ export const articles: Article[] = [
     )
   },
   {
-    title: "Giải Pháp Sửa Chữa Nâng Cấp Không Gian Sống Toàn Diện",
-    description: "Dịch vụ cải tạo nhà ở chuyên nghiệp: Xử lý nứt tường, sơn bả lại, nâng cấp hệ thống âm trần và thiết kế lại công năng.",
+    title: "Giải Pháp Phá Dỡ Trần Vách Thạch Cao An Toàn, Nhanh Gọn",
+    description: "Hướng dẫn phá dỡ trần vách thạch cao đúng kỹ thuật, hạn chế bụi bẩn, đảm bảo an toàn và tối ưu chi phí tại Hà Nội.",
     date: "16/04/2026",
     category: "Cải tạo nhà",
     slug: "giai-phap-sua-chua-nang-cap-nha",
-    image: heroRenovation,
+    image: phado1,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
-          <h3 className="text-2xl font-bold text-charcoal">Cải tạo nhà cũ - Nâng tầm không gian sống</h3>
-          <p>Căn nhà của bạn sau 10-15 năm thường xuất hiện tình trạng bong tróc sơn, thấm dột, hoặc hệ thống điện nước lỗi thời. Việc cải tạo không chỉ giúp nâng tầm vẻ đẹp mà còn đảm bảo an toàn và tối ưu hóa diện tích sử dụng cho cả gia đình.</p>
+          <h3 className="text-2xl font-bold text-charcoal">Khi nào cần phá dỡ trần vách thạch cao?</h3>
+          <p>
+            Sau thời gian dài sử dụng, trần hoặc vách thạch cao có thể bị thấm nước, nứt mối nối, võng xệ hoặc không còn phù hợp với nhu cầu bố trí mới.
+            Việc tháo dỡ đúng kỹ thuật giúp bạn cải tạo không gian nhanh, hạn chế phát sinh và chuẩn bị mặt bằng tốt cho hạng mục thi công mới.
+          </p>
+        </div>
+
+        <div className="bg-secondary p-6 rounded-2xl shadow-sm border-t-4 border-primary">
+          <h4 className="font-bold text-primary mb-4 italic underline text-center">Các trường hợp thường cần tháo dỡ:</h4>
+          <ul className="space-y-3 text-sm">
+            <li className="flex gap-2"><span>•</span> <span>Thay đổi công năng phòng, cần mở rộng hoặc tạo không gian mở.</span></li>
+            <li className="flex gap-2"><span>•</span> <span>Trần/vách bị thấm nước, mốc, nứt và cần thay mới toàn bộ hệ khung.</span></li>
+            <li className="flex gap-2"><span>•</span> <span>Cần đi lại hệ điện nước, điều hòa âm trần hoặc thông gió.</span></li>
+            <li className="flex gap-2"><span>•</span> <span>Hoàn trả mặt bằng nhà phố, văn phòng, cửa hàng trước khi bàn giao.</span></li>
+          </ul>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-secondary p-6 rounded-2xl shadow-sm border-t-4 border-primary">
-            <h4 className="font-bold text-primary mb-4 italic underline text-center">Các hạng mục chính:</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex gap-2"><span>•</span> <span>Phá dỡ tường, cơi nới diện tích, thay đổi công năng phòng.</span></li>
-              <li className="flex gap-2"><span>•</span> <span>Xử lý nứt tường, chống thấm sân thượng, nhà vệ sinh triệt để.</span></li>
-              <li className="flex gap-2"><span>•</span> <span>Thay thế hệ thống điện nước âm tường bằng vật tư cao cấp.</span></li>
-              <li className="flex gap-2"><span>•</span> <span>Thi công lại trần thạch cao thẩm mỹ & sàn nhựa, sàn gỗ.</span></li>
-              <li className="flex gap-2"><span>•</span> <span>Sơn bả hoàn thiện với các loại sơn cao cấp như Dulux, Jotun.</span></li>
-            </ul>
-          </div>
-          <div className="bg-secondary p-6 rounded-2xl shadow-sm border-t-4 border-primary">
-            <h4 className="font-bold text-primary mb-4 italic underline text-center">Quy trình làm việc:</h4>
+            <h4 className="font-bold text-primary mb-4 italic underline text-center">Quy trình phá dỡ an toàn:</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex gap-3">
                 <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">01</span>
-                <span>Tiếp nhận yêu cầu và khảo sát hiện trạng thực tế.</span>
+                <span>Khảo sát hiện trạng, xác định rủi ro và phương án thi công.</span>
               </li>
               <li className="flex gap-3">
                 <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">02</span>
-                <span>Lên phương án thiết kế sơ bộ và dự toán chi phí chi tiết.</span>
+                <span>Che chắn kỹ khu vực thi công, quây bạt và phun sương giảm bụi.</span>
               </li>
               <li className="flex gap-3">
                 <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">03</span>
-                <span>Ký kết hợp đồng và triển khai thi công theo tiến độ.</span>
+                <span>Ngắt điện nước liên quan, tháo dỡ theo từng mảng từ trên xuống dưới.</span>
               </li>
               <li className="flex gap-3">
                 <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">04</span>
-                <span>Giám sát kỹ thuật chặt chẽ từng hạng mục công trình.</span>
+                <span>Đóng bao, vận chuyển xà bần đúng quy định và vệ sinh sạch sẽ.</span>
               </li>
-              <li className="flex gap-3">
-                <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">05</span>
-                <span>Nghiệm thu, bàn giao và thực hiện chế độ bảo hành.</span>
-              </li>
+            </ul>
+          </div>
+          <div className="bg-secondary p-6 rounded-2xl shadow-sm border-t-4 border-primary">
+            <h4 className="font-bold text-primary mb-4 italic underline text-center">Bảng giá tham khảo phá dỡ:</h4>
+            <ul className="space-y-3 text-sm">
+              <li>• Từ 100m2 trở lên: khoảng <strong>60.000đ/m2</strong>.</li>
+              <li>• Từ 50m2 - dưới 100m2: khoảng <strong>100.000đ/m2</strong>.</li>
+              <li>• Dưới 50m2 hoặc mặt bằng khó: khảo sát và báo giá theo thực tế.</li>
+              <li>• Đơn giá có thể thay đổi theo độ cao, mức độ che chắn và vị trí đổ thải.</li>
+              <li>• Nên yêu cầu báo giá trọn gói gồm tháo dỡ, dọn dẹp và vận chuyển xà bần.</li>
             </ul>
           </div>
         </div>
 
+        <div className="rounded-3xl overflow-hidden shadow-lg my-8">
+          <img src={phado2} alt="Đóng bao và vận chuyển xà bần sau phá dỡ vách thạch cao" className="w-full object-cover aspect-video" />
+          <p className="text-center text-xs italic py-2 bg-neutral-100">Khâu thu gom, đóng bao và vận chuyển vật liệu sau phá dỡ</p>
+        </div>
+
         <div className="space-y-4">
-          <h3 className="text-2xl font-bold text-charcoal">Tại sao nên chọn dịch vụ cải tạo của chúng tôi?</h3>
-          <p>Với phương châm <strong>"Xây niềm tin - Dựng chất lượng"</strong>, chúng tôi không chỉ sửa chữa mà còn đồng sáng tạo không gian sống mơ ước cùng khách hàng:</p>
+          <h3 className="text-2xl font-bold text-charcoal">Vì sao nên thuê đội thợ chuyên nghiệp?</h3>
+          <p>Phá dỡ tưởng đơn giản nhưng nếu làm sai kỹ thuật sẽ rất dễ phát sinh bụi bẩn, rơi vỡ và ảnh hưởng kết cấu xung quanh. Đội thợ chuyên nghiệp giúp bạn:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><strong>Đội ngũ thợ tay nghề cao:</strong> Thợ được đào tạo bài bản, có kinh nghiệm xử lý các ca "khó" như thấm dột lâu năm, nứt kết cấu.</li>
-            <li><strong>Vật liệu chính hãng:</strong> Nói không với hàng giả, hàng nhái, cam kết sử dụng vật liệu đúng như trong hợp đồng.</li>
-            <li><strong>Báo giá minh bạch:</strong> Không phát sinh chi phí trong quá trình thi công (trừ khi chủ nhà có yêu cầu thêm).</li>
-            <li><strong>Sạch sẽ & Gọn gàng:</strong> Vệ sinh công trình hàng ngày, đảm bảo ít ảnh hưởng nhất đến hàng xóm xung quanh.</li>
+            <li><strong>An toàn lao động:</strong> Trang bị bảo hộ đầy đủ, có phương án thi công rõ ràng.</li>
+            <li><strong>Giảm bụi và tiếng ồn:</strong> Che chắn đúng cách, tháo dỡ theo trình tự, hạn chế ảnh hưởng khu dân cư.</li>
+            <li><strong>Tiến độ nhanh:</strong> Chia tổ thi công theo khu vực để rút ngắn thời gian bàn giao.</li>
+            <li><strong>Chi phí minh bạch:</strong> Báo giá theo hiện trạng, hạn chế tối đa phát sinh ngoài hợp đồng.</li>
           </ul>
         </div>
+
+        <p className="font-bold text-center text-primary text-xl">
+          Cần khảo sát phá dỡ trần vách thạch cao? Gọi ngay: 0388.423.600 (Hỗ trợ 24/7)
+        </p>
       </div>
     )
   },
@@ -329,6 +351,111 @@ export const articles: Article[] = [
         </div>
 
         <p className="font-bold text-center text-primary text-xl animate-pulse">Hotline: 0388.423.600 - Phục vụ tận tâm 24/7</p>
+      </div>
+    )
+  },
+  {
+    title: "Báo Giá Sơn Nhà Hà Nội 2026: Nhân Công Và Trọn Gói",
+    description: "Cập nhật đơn giá sơn nhà mới nhất, cách tính chi phí và kinh nghiệm chọn màu sơn thực tế cho nhà phố, chung cư, phòng trọ.",
+    date: "01/05/2026",
+    category: "Sơn nhà",
+    slug: "bao-gia-son-nha-ha-noi-2026",
+    image: sonnha1,
+    content: (
+      <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">Báo giá thợ sơn lại nhà tại Hà Nội mới nhất</h3>
+          <p>
+            Chi phí sơn nhà phụ thuộc vào tình trạng tường, diện tích thực tế, hệ sơn lựa chọn và độ khó thi công.
+            Với nhà ở dân dụng tại Hà Nội, bạn có thể tham khảo mức giá phổ biến dưới đây để chủ động ngân sách trước khi gọi thợ khảo sát.
+          </p>
+        </div>
+
+        <div className="bg-secondary p-6 rounded-2xl border-t-4 border-primary overflow-x-auto">
+          <table className="w-full text-sm text-left">
+            <thead className="text-primary font-bold border-b border-primary/20">
+              <tr>
+                <th className="pb-3">Hạng mục sơn</th>
+                <th className="pb-3">Phạm vi công việc</th>
+                <th className="pb-3 text-right">Đơn giá tham khảo (đ/m2)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-charcoal/5">
+              <tr>
+                <td className="py-3">Sơn nhân công</td>
+                <td className="py-3">Chủ nhà tự mua sơn, đội thợ thi công</td>
+                <td className="py-3 text-right font-bold">15.000 - 20.000</td>
+              </tr>
+              <tr>
+                <td className="py-3">Sơn lại trọn gói</td>
+                <td className="py-3">Vật tư + nhân công + vệ sinh bàn giao</td>
+                <td className="py-3 text-right font-bold">40.000 - 60.000</td>
+              </tr>
+              <tr>
+                <td className="py-3">Sơn mới nhà xây thô</td>
+                <td className="py-3">Bả matit + lót + phủ hoàn thiện</td>
+                <td className="py-3 text-right font-bold">65.000 - 95.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="rounded-3xl overflow-hidden shadow-lg my-8">
+          <img src={featPainting} alt="Thi công sơn tường nhà ở thực tế" className="w-full object-cover aspect-video" />
+          <p className="text-center text-xs italic py-2 bg-neutral-100">Thi công sơn tường đúng quy trình giúp bề mặt bền màu và ít bong tróc</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-secondary p-6 rounded-2xl border-t-4 border-primary">
+            <h4 className="font-bold text-primary mb-4 italic underline text-center">Sai lầm thường gặp khi sơn lại nhà:</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex gap-2"><span>•</span> <span>Chọn màu quá đậm cho toàn bộ không gian khiến phòng bị tối và bí.</span></li>
+              <li className="flex gap-2"><span>•</span> <span>Không xử lý nứt/chống thấm trước khi sơn phủ, dẫn đến bong tróc sớm.</span></li>
+              <li className="flex gap-2"><span>•</span> <span>Không kiểm tra định mức sơn, thi công thiếu lớp lót hoặc pha loãng quá mức.</span></li>
+              <li className="flex gap-2"><span>•</span> <span>Chốt giá chung chung, không ghi rõ từng hạng mục và vật tư đi kèm.</span></li>
+            </ul>
+          </div>
+          <div className="bg-secondary p-6 rounded-2xl border-t-4 border-primary">
+            <h4 className="font-bold text-primary mb-4 italic underline text-center">Quy trình thi công sơn chuẩn:</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">01</span>
+                <span>Khảo sát bề mặt, đo đạc diện tích và tư vấn hệ sơn phù hợp.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">02</span>
+                <span>Xử lý bề mặt: cạo bỏ lớp cũ, vá nứt, chà nhám và chống thấm nếu cần.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">03</span>
+                <span>Sơn lót đồng đều, sau đó sơn phủ 2 lớp để màu lên chuẩn và bền.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center text-[10px]">04</span>
+                <span>Vệ sinh, nghiệm thu và bàn giao theo đúng màu đã chốt ban đầu.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">Các màu sơn nhà được chọn nhiều năm 2026</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Trắng kem - be sáng:</strong> Dễ phối nội thất, giúp không gian thoáng và sạch.</li>
+            <li><strong>Xám nhạt hiện đại:</strong> Hợp chung cư, nhà phố phong cách tối giản.</li>
+            <li><strong>Xanh pastel:</strong> Tạo cảm giác dịu mắt, phù hợp phòng ngủ và phòng trẻ em.</li>
+            <li><strong>Màu nhấn đậm:</strong> Chỉ nên dùng cho 1 mảng tường để tránh nặng không gian.</li>
+          </ul>
+        </div>
+
+        <div className="bg-primary/5 p-6 rounded-2xl border-l-4 border-primary space-y-3">
+          <h4 className="font-bold text-charcoal">FAQ nhanh trước khi thuê thợ sơn</h4>
+          <p className="text-sm"><strong>Hỏi:</strong> Dưới 50m2 có nhận làm không? <strong>Đáp:</strong> Có, đội thợ nhận cả công trình nhỏ và sẽ báo giá theo hiện trạng.</p>
+          <p className="text-sm"><strong>Hỏi:</strong> Sơn xong bao lâu ở được? <strong>Đáp:</strong> Nên thông thoáng 24-48 giờ để mùi sơn bay bớt trước khi ở kín phòng.</p>
+          <p className="text-sm"><strong>Hỏi:</strong> Có phát sinh chi phí không? <strong>Đáp:</strong> Chỉ phát sinh khi chủ nhà bổ sung hạng mục ngoài khối lượng đã chốt.</p>
+        </div>
+
+        <p className="font-bold text-center text-primary text-xl">Hotline tư vấn sơn nhà: 0388.423.600 - Khảo sát nhanh, báo giá minh bạch</p>
       </div>
     )
   }

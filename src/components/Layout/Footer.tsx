@@ -3,22 +3,22 @@ import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-slate-950 border-t border-slate-800 text-slate-100">
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand + Social Media */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="w-10 h-10 object-contain" />
-              <span className="text-2xl font-bold text-primary">Sửa nhà Hà Nội</span>
+              <span className="text-2xl font-bold text-amber-400">Sửa nhà Hà Nội</span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-slate-400 text-sm leading-relaxed">
               Kiến tạo không gian sống mơ ước. Chúng tôi chuyên thi công trần thạch cao, sơn bả tường và sơn tường nhà trọn gói với chất lượng và độ bền vượt trội.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-primary transition-all"
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-950 hover:border-amber-400 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -26,7 +26,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-primary transition-all"
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-amber-400 hover:text-slate-950 hover:border-amber-400 transition-all"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -35,26 +35,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Dịch Vụ Chính</h3>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-slate-100">Dịch Vụ Chính</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-primary rounded-full" /> Thi công trần thạch cao
+                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Thi công trần thạch cao
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-primary rounded-full" /> Sơn bả matit chuyên nghiệp
+                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Sơn bả matit chuyên nghiệp
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-primary rounded-full" /> Sơn nội ngoại thất
+                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Sơn nội ngoại thất
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-primary rounded-full" /> Vách ngăn thạch cao
+                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Vách ngăn thạch cao
                 </Link>
               </li>
             </ul>
@@ -62,23 +62,23 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-foreground">Thông Tin Liên Hệ</h3>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <p className="flex items-center gap-3">📍 <span className="font-medium text-foreground">Địa chỉ:</span> Hồ Tây, Hà Nội</p>
-              <p className="flex items-center gap-3">📞 <span className="font-medium text-foreground">Hotline:</span> 0388.423.600</p>
-              <p className="flex items-center gap-3">📧 <span className="font-medium text-foreground">Email:</span> suanhataihanoi368@gmail.com</p>
-              <p className="flex items-center gap-3">✨ <span className="font-medium text-foreground">Làm việc:</span> 24/7 (Cả ngày lễ)</p>
+            <h3 className="text-sm font-bold uppercase tracking-widest text-slate-100">Thông Tin Liên Hệ</h3>
+            <div className="space-y-4 text-sm text-slate-400">
+              <p className="flex items-center gap-3">📍 <span className="font-medium text-slate-100">Địa chỉ:</span> Hồ Tây, Hà Nội</p>
+              <p className="flex items-center gap-3">📞 <span className="font-medium text-slate-100">Hotline:</span> 0388.423.600</p>
+              <p className="flex items-center gap-3">📧 <span className="font-medium text-slate-100">Email:</span> suanhataihanoi368@gmail.com</p>
+              <p className="flex items-center gap-3">✨ <span className="font-medium text-slate-100">Làm việc:</span> 24/7 (Cả ngày lễ)</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-xs">
+        <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-xs">
             © 2026 Sửa nhà Hà Nội – Chuyên gia thi công trần & sơn tường. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted-foreground">
-            <Link to="/bao-gia" className="hover:text-primary">Chính sách bảo hành</Link>
-            <Link to="/dich-vu" className="hover:text-primary">Quy trình thi công</Link>
+          <div className="flex gap-6 text-xs text-slate-400">
+            <Link to="/bao-gia" className="hover:text-amber-300">Chính sách bảo hành</Link>
+            <Link to="/dich-vu" className="hover:text-amber-300">Quy trình thi công</Link>
           </div>
         </div>
       </div>
