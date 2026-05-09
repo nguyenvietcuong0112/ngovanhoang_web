@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
+import { trackAdsConversion } from "@/utils/gtag";
 
 const FloatingContact = () => {
   return (
@@ -11,6 +12,9 @@ const FloatingContact = () => {
         className="w-14 h-14 bg-[#0068ff] text-white flex items-center justify-center rounded-full shadow-lg"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() =>
+          trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" })
+        }
       >
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" 
@@ -23,6 +27,9 @@ const FloatingContact = () => {
         whileTap={{ scale: 0.9 }}
         href="tel:0388423600"
         className="w-14 h-14 bg-primary text-white flex items-center justify-center rounded-full shadow-lg relative"
+        onClick={() =>
+          trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" })
+        }
       >
         <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20" />
         <Phone className="w-7 h-7" />

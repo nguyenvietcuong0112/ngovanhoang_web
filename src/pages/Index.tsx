@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { articles, type Article } from "@/data/articles";
+import { trackAdsConversion } from "@/utils/gtag";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2,
@@ -605,6 +606,7 @@ const Index = () => {
                       `- Nội dung yêu cầu: ${message}`
                     );
                     
+                    trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" });
                     window.location.href = `mailto:suanhataihanoi368@gmail.com?subject=${subject}&body=${body}`;
                     
                     setStatus("success");

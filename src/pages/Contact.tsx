@@ -4,6 +4,7 @@ import Footer from "@/components/Layout/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Mail, MapPin, Phone, ShieldCheck, Zap } from "lucide-react";
+import { trackAdsConversion } from "@/utils/gtag";
 
 const Contact = () => {
   const [status, setStatus] = useState<"idle" | "success">("idle");
@@ -20,6 +21,8 @@ const Contact = () => {
     const body = encodeURIComponent(
       `Thông tin yêu cầu hỗ trợ:\n\n- Họ tên: ${fullname}\n- Số điện thoại: ${phone}\n- Địa chỉ công trình: ${address}\n- Nội dung yêu cầu: ${message}`
     );
+
+    trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" });
     window.location.href = `mailto:suanhataihanoi368@gmail.com?subject=${subject}&body=${body}`;
     setStatus("success");
     e.currentTarget.reset();

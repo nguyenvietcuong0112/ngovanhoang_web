@@ -5,6 +5,7 @@ import { articles } from "@/data/articles";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import SEO from "@/components/SEO";
+import { trackAdsConversion } from "@/utils/gtag";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Tag, ChevronRight, Phone, MessageSquare } from "lucide-react";
 
@@ -146,12 +147,24 @@ const ArticleDetail = () => {
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button asChild size="lg" className="rounded-full px-8 h-12">
-                    <a href="tel:0388423600" className="flex items-center gap-2">
+                    <a
+                      href="tel:0388423600"
+                      className="flex items-center gap-2"
+                      onClick={() =>
+                        trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" })
+                      }
+                    >
                       <Phone className="w-5 h-5" /> Gọi ngay: 0388.423.600
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 bg-white text-primary hover:bg-neutral-50 border-primary/20">
-                    <a href="https://zalo.me/0388423600" className="flex items-center gap-2">
+                    <a
+                      href="https://zalo.me/0388423600"
+                      className="flex items-center gap-2"
+                      onClick={() =>
+                        trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" })
+                      }
+                    >
                       <MessageSquare className="w-5 h-5" /> Chat Zalo
                     </a>
                   </Button>
