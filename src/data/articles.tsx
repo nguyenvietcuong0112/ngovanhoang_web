@@ -12,6 +12,11 @@ import beforeAfter from "@/assets/ceiling-before-after.png";
 import phado1 from "@/assets/phado1.jpeg";
 import phado2 from "@/assets/phado2.jpeg";
 import sonnha1 from "@/assets/sonnha1.jpg";
+import tranthachcao1 from "@/assets/tranthachcao1.jpeg";
+import tranthachcao2 from "@/assets/tranthachcao2.jpeg";
+import tranthachcao3 from "@/assets/tranthachcao3.jpeg";
+import tranthachcao4 from "@/assets/tranthachcao4.jpeg";
+import baogiatranthachcao from "@/assets/baogiatranthachcao.jpeg";
 
 export type Article = {
   title: string;
@@ -67,10 +72,25 @@ export const articles: Article[] = [
           </table>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 pt-4">
+          <h3 className="text-2xl font-bold text-charcoal">Bảng báo giá chi tiết thi công (Hình ảnh)</h3>
+          <img src={baogiatranthachcao} alt="Bảng báo giá trần thạch cao chi tiết" className="w-full rounded-2xl shadow-sm border border-neutral-100" />
+        </div>
+
+        <div className="space-y-4 pt-4">
+          <h3 className="text-2xl font-bold text-charcoal">Một số hình ảnh thi công trần thạch cao thực tế</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <img src={tranthachcao1} alt="Mẫu trần thạch cao thi công thực tế 1" className="w-full h-full rounded-xl shadow-sm object-cover aspect-video hover:scale-[1.02] transition-transform duration-300" />
+            <img src={tranthachcao2} alt="Mẫu trần thạch cao thi công thực tế 2" className="w-full h-full rounded-xl shadow-sm object-cover aspect-video hover:scale-[1.02] transition-transform duration-300" />
+            <img src={tranthachcao3} alt="Mẫu trần thạch cao thi công thực tế 3" className="w-full h-full rounded-xl shadow-sm object-cover aspect-video hover:scale-[1.02] transition-transform duration-300" />
+            <img src={tranthachcao4} alt="Mẫu trần thạch cao thi công thực tế 4" className="w-full h-full rounded-xl shadow-sm object-cover aspect-video hover:scale-[1.02] transition-transform duration-300" />
+          </div>
+        </div>
+
+        <div className="space-y-4 pt-4">
           <h3 className="text-2xl font-bold text-charcoal">Tại sao nên dùng khung xương Vĩnh Tường Basi?</h3>
           <p>Khung xương Basi có độ dày tiêu chuẩn, bề mặt mạ kẽm chống rỉ sét tuyệt đối, giúp hệ trần không bị võng xệ sau 10-20 năm sử dụng. Kết hợp với tấm thạch cao Gyproc tiêu chuẩn Pháp, công trình của bạn sẽ có độ bền và tính thẩm mỹ vượt trội.</p>
-          <img src={ceilingDesign} alt="Mẫu trần thạch cao Vĩnh Tường đẹp" className="rounded-2xl shadow-sm border border-neutral-100" />
+          <img src={ceilingDesign} alt="Mẫu trần thạch cao Vĩnh Tường đẹp" className="rounded-2xl shadow-sm border border-neutral-100 hover:scale-[1.01] transition-transform duration-300" />
         </div>
       </div>
     )
