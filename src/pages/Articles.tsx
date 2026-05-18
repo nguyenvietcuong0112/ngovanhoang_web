@@ -88,12 +88,11 @@ const Articles = () => {
                     </p>
                   </div>
                   <div className="px-8 pb-8 mt-auto">
-                    <Button 
+                    <Button
                       asChild
-                      variant="link" 
-                      className="p-0 h-auto text-primary font-bold hover:no-underline group/btn"
+                      className="w-full rounded-full h-11 px-6 bg-primary text-white font-bold shadow-md hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all group/btn"
                     >
-                      <Link to={`/bai-viet/${article.slug}`} className="flex items-center gap-2">
+                      <Link to={`/bai-viet/${article.slug}`} className="flex items-center justify-center gap-2">
                         Đọc bài viết <Zap className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                       </Link>
                     </Button>

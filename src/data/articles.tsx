@@ -17,6 +17,9 @@ import tranthachcao2 from "@/assets/tranthachcao2.jpeg";
 import tranthachcao3 from "@/assets/tranthachcao3.jpeg";
 import tranthachcao4 from "@/assets/tranthachcao4.jpeg";
 import baogiatranthachcao from "@/assets/baogiatranthachcao.jpeg";
+import vach1 from "@/assets/vach1.jpg";
+import vach2 from "@/assets/vach2.jpg";
+import vach3 from "@/assets/vach3.jpg";
 
 export type Article = {
   title: string;
@@ -35,7 +38,7 @@ export const articles: Article[] = [
     date: "16/04/2026",
     category: "Giá thi công",
     slug: "bao-gia-tran-vach-thach-cao-2026",
-    image: heroCeiling,
+    image: tranthachcao1,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
         <div className="space-y-4">
@@ -73,7 +76,12 @@ export const articles: Article[] = [
         </div>
 
         <div className="space-y-4 pt-4">
-          <h3 className="text-2xl font-bold text-charcoal">Bảng báo giá chi tiết thi công (Hình ảnh)</h3>
+          <h3 className="text-2xl font-bold text-charcoal">Bảng báo giá vách thạch cao chi tiết</h3>
+          <img src={vach1} alt="Bảng báo giá vách thạch cao 1 mặt và 2 mặt" className="w-full rounded-2xl shadow-sm border border-neutral-100" />
+        </div>
+
+        <div className="space-y-4 pt-4">
+          <h3 className="text-2xl font-bold text-charcoal">Bảng báo giá trần thạch cao (Hình ảnh)</h3>
           <img src={baogiatranthachcao} alt="Bảng báo giá trần thạch cao chi tiết" className="w-full rounded-2xl shadow-sm border border-neutral-100" />
         </div>
 
@@ -101,9 +109,14 @@ export const articles: Article[] = [
     date: "16/04/2026",
     category: "Cải tạo nhà",
     slug: "giai-phap-sua-chua-nang-cap-nha",
-    image: phado1,
+    image: vach2,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="rounded-3xl overflow-hidden shadow-lg">
+          <img src={vach2} alt="Phá dỡ trần vách thạch cao tại công trình" className="w-full object-cover aspect-video" />
+          <p className="text-center text-xs italic py-2 bg-neutral-100">Tháo dỡ vách thạch cao an toàn, đúng quy trình kỹ thuật</p>
+        </div>
+
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-charcoal">Khi nào cần phá dỡ trần vách thạch cao?</h3>
           <p>
@@ -184,9 +197,14 @@ export const articles: Article[] = [
     date: "12/03/2026",
     category: "Vách ngăn",
     slug: "bao-gia-vach-thach-cao-1-mat-2-mat",
-    image: heroConstruction,
+    image: vach3,
     content: (
       <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="rounded-3xl overflow-hidden shadow-lg">
+          <img src={vach3} alt="Vách ngăn thạch cao phòng khách hiện đại" className="w-full object-cover aspect-video" />
+          <p className="text-center text-xs italic py-2 bg-neutral-100">Mẫu vách ngăn thạch cao 1 mặt và 2 mặt thẩm mỹ</p>
+        </div>
+
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-charcoal">Giải pháp ngăn phòng tối ưu với vách thạch cao</h3>
           <p>Vách ngăn thạch cao là giải pháp thay thế tường gạch truyền thống một cách hoàn hảo. Với trọng lượng chỉ bằng 1/10 tường gạch, vách thạch cao giúp giảm tải trọng cho móng và cho phép thay đổi thiết kế linh hoạt sau này.</p>

@@ -75,7 +75,7 @@ const ArticleDetail = () => {
                 "@type": "ListItem",
                 position: 2,
                 name: "Bài viết",
-                item: `${window.location.origin}/bai-viet`,
+                item: `${window.location.origin}/#bai-viet`,
               },
               {
                 "@type": "ListItem",
@@ -94,14 +94,14 @@ const ArticleDetail = () => {
           {/* Back button and Breadcrumbs */}
           <div className="flex items-center gap-4 mb-8">
             <Button asChild variant="ghost" size="sm" className="rounded-full">
-              <Link to="/bai-viet" className="flex items-center gap-2">
+              <Link to={{ pathname: "/", hash: "#bai-viet" }} className="flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" /> Quay lại
               </Link>
             </Button>
             <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground font-medium">
               <Link to="/" className="hover:text-primary">Trang chủ</Link>
               <ChevronRight className="w-4 h-4" />
-              <Link to="/bai-viet" className="hover:text-primary">Bài viết</Link>
+              <Link to={{ pathname: "/", hash: "#bai-viet" }} className="hover:text-primary">Bài viết</Link>
               <ChevronRight className="w-4 h-4" />
               <span className="text-foreground truncate max-w-[200px]">{article.title}</span>
             </div>

@@ -11,7 +11,6 @@ const Header = () => {
     { name: "Dịch Vụ", to: "/dich-vu" },
     { name: "Bảng Giá", to: "/bao-gia" },
     { name: "Công Trình", to: "/cong-trinh" },
-    { name: "Bài Viết", to: "/bai-viet" },
     { name: "Liên Hệ", to: "/lien-he" },
   ];
 
