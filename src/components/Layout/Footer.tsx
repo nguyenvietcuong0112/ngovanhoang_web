@@ -38,23 +38,23 @@ const Footer = () => {
             <h3 className="text-sm font-bold uppercase tracking-widest text-slate-100">Dịch Vụ Chính</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                <Link to="/tran-thach-cao" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
                   <span className="w-1 h-1 bg-amber-400 rounded-full" /> Thi công trần thạch cao
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Sơn bả matit chuyên nghiệp
+                <Link to="/vach-thach-cao" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Thi công vách thạch cao
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Sơn nội ngoại thất
+                <Link to="/sua-chua-thach-cao" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Sửa chữa thạch cao
                 </Link>
               </li>
               <li>
-                <Link to="/dich-vu" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
-                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Vách ngăn thạch cao
+                <Link to="/thao-do-thach-cao" className="text-slate-400 hover:text-amber-300 transition-colors text-sm flex items-center gap-2">
+                  <span className="w-1 h-1 bg-amber-400 rounded-full" /> Tháo dỡ thạch cao
                 </Link>
               </li>
             </ul>

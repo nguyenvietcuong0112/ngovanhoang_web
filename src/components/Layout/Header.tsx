@@ -7,11 +7,14 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Trang Chủ", to: "/" },
-    { name: "Dịch Vụ", to: "/dich-vu" },
-    { name: "Bảng Giá", to: "/bao-gia" },
-    { name: "Công Trình", to: "/cong-trinh" },
-    { name: "Liên Hệ", to: "/lien-he" },
+    { name: "Trang chủ", to: "/" },
+    { name: "Giới thiệu", to: "/gioi-thieu" },
+    { name: "Trần thạch cao", to: "/tran-thach-cao" },
+    { name: "Vách thạch cao", to: "/vach-thach-cao" },
+    { name: "Sửa chữa thạch cao", to: "/sua-chua-thach-cao" },
+    { name: "Tháo dỡ thạch cao", to: "/thao-do-thach-cao" },
+    { name: "Tin tức", to: "/tin-tuc" },
+    { name: "Liên hệ", to: "/lien-he" },
   ];
 
   return (
@@ -25,12 +28,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.to}
-                className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === item.to
+                className={`text-xs xl:text-sm font-medium whitespace-nowrap transition-colors hover:text-primary ${location.pathname === item.to
                   ? "text-primary"
                   : "text-muted-foreground"
                   }`}
@@ -44,7 +47,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             {/* Mobile Hamburger */}
             <button
-              className="md:hidden p-2 rounded-md hover:bg-accent focus:outline-none"
+              className="lg:hidden p-2 rounded-md hover:bg-accent focus:outline-none"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
@@ -59,7 +62,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background px-4 py-4 space-y-4">
+        <div className="lg:hidden border-t border-border bg-background px-4 py-4 space-y-4">
           {navigation.map((item) => (
             <Link
               key={item.name}

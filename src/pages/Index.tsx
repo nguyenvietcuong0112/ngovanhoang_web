@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import PricingTables from "@/components/PricingTables";
 import { articles, type Article } from "@/data/articles";
 import { trackAdsConversion } from "@/utils/gtag";
 import { motion, AnimatePresence } from "framer-motion";
@@ -28,8 +29,7 @@ import hero_ceiling from "/src/assets/hero-ceiling.png";
 import hero_renovation from "/src/assets/hero-renovation.png";
 import hero_decor from "/src/assets/hero-construction-modern.jpg";
 import feat_ceiling from "/src/assets/feat-ceiling.png";
-import vach1 from "@/assets/vach1.jpg";
-import baogiatranthachcao from "@/assets/baogiatranthachcao.jpeg";
+
 
 const slides = [
   {
@@ -163,71 +163,13 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ================= BẢNG GIÁ (ảnh) ================= */}
-        <section id="bang-gia-anh" className="py-20 bg-secondary scroll-mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="container mx-auto px-4 lg:px-8 space-y-12"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center max-w-3xl mx-auto space-y-4"
-            >
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">BẢNG GIÁ THI CÔNG</h2>
-              <h3 className="text-3xl md:text-5xl font-bold">Báo giá trần & vách thạch cao 2026</h3>
-              <p className="text-lg text-muted-foreground">
-                Đơn giá tham khảo theo diện tích công trình. Liên hệ để được khảo sát và báo giá chính xác tại công trình.
-              </p>
-            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <motion.figure
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="space-y-3"
-              >
-                <img
-                  src={vach1}
-                  alt="Bảng báo giá vách thạch cao 1 mặt và 2 mặt"
-                  className="w-full rounded-2xl shadow-premium border border-neutral-200 bg-white"
-                />
-                <figcaption className="text-center text-sm font-semibold text-charcoal">
-                  Bảng giá vách thạch cao
-                </figcaption>
-                <Button asChild variant="outline" className="w-full rounded-full">
-                  <Link to="/bai-viet/bao-gia-vach-thach-cao-1-mat-2-mat">Xem chi tiết vách thạch cao</Link>
-                </Button>
-              </motion.figure>
 
-              <motion.figure
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-3"
-              >
-                <img
-                  src={baogiatranthachcao}
-                  alt="Bảng báo giá trần thạch cao chi tiết"
-                  className="w-full rounded-2xl shadow-premium border border-neutral-200 bg-white"
-                />
-                <figcaption className="text-center text-sm font-semibold text-charcoal">
-                  Bảng giá trần thạch cao
-                </figcaption>
-                <Button asChild variant="outline" className="w-full rounded-full">
-                  <Link to="/bai-viet/bao-gia-tran-vach-thach-cao-2026">Xem chi tiết trần thạch cao</Link>
-                </Button>
-              </motion.figure>
-            </div>
-          </motion.div>
+        {/* ================= BẢNG GIÁ CHI TIẾT (Component) ================= */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 lg:px-8">
+            <PricingTables />
+          </div>
         </section>
 
         {/* ================= ARTICLES (below hero) ================= */}

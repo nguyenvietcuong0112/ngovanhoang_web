@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Mail, MapPin, Phone, ShieldCheck, Zap } from "lucide-react";
 import { trackAdsConversion } from "@/utils/gtag";
+import { BRAND_NAME, EMAIL, PHONE, PHONE_DISPLAY, PHONE_TEL } from "@/constants/contact";
 
 const Contact = () => {
   const [status, setStatus] = useState<"idle" | "success">("idle");
@@ -23,25 +25,39 @@ const Contact = () => {
     );
 
     trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" });
-    window.location.href = `mailto:suanhataihanoi368@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setStatus("success");
     e.currentTarget.reset();
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={`Liên hệ ${BRAND_NAME} - Tư vấn thi công thạch cao Hà Nội`}
+        description="Liên hệ để được tư vấn, khảo sát thực tế và báo giá rõ ràng cho thi công, sửa chữa hoặc tháo dỡ trần vách thạch cao tại Hà Nội."
+        keywords="liên hệ thi công thạch cao hà nội, hotline sửa nhà hà nội"
+      />
       <Header />
       <main className="py-20">
         <section className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="space-y-8">
-              <h1 className="text-3xl md:text-5xl font-bold">Liên Hệ Tư Vấn</h1>
+              <h1 className="text-3xl md:text-5xl font-bold">Liên hệ {BRAND_NAME}</h1>
               <p className="text-muted-foreground">
-                Gửi thông tin để nhận tư vấn và báo giá nhanh cho công trình của bạn.
+                Quý khách cần thi công, sửa chữa hoặc tháo rỡ trần vách thạch cao tại Hà Nội, vui lòng liên hệ để được tư vấn, khảo sát thực tế và báo giá rõ ràng theo từng hạng mục.
               </p>
+              <p className="text-sm text-muted-foreground">
+                Báo giá chính xác sau khi khảo sát diện tích, hiện trạng công trình, vật tư sử dụng và yêu cầu hoàn thiện.
+              </p>
+              <Button asChild size="lg" className="rounded-full">
+                <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2">
+                  <Phone className="w-5 h-5" /> Gọi ngay: {PHONE}
+                </a>
+              </Button>
               <div className="space-y-4 text-sm">
-                <p className="flex items-center gap-3"><Phone className="w-4 h-4 text-primary" /> 0388.423.600</p>
-                <p className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> suanhataihanoi368@gmail.com</p>
+                <p className="flex items-center gap-3"><Phone className="w-4 h-4 text-primary" /> {PHONE_DISPLAY}</p>
+                <p className="flex items-center gap-3"><Mail className="w-4 h-4 text-primary" /> {EMAIL}</p>
+                <p className="flex items-center gap-3"><MapPin className="w-4 h-4 text-primary" /> Khu vực phục vụ: Hà Nội</p>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-primary mt-0.5" />
                   <div className="space-y-1">

@@ -12,15 +12,15 @@ const Articles = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Bài viết sửa nhà Hà Nội: báo giá, kinh nghiệm thi công mới nhất"
-        description="Tổng hợp bài viết chuyên sâu về thi công trần thạch cao, sơn bả, cải tạo nhà và báo giá cập nhật tại Hà Nội."
-        keywords="bài viết sửa nhà hà nội, kinh nghiệm thi công trần thạch cao, báo giá sửa nhà, cải tạo nhà hà nội"
+        title="Tin tức thi công thạch cao Hà Nội - Báo giá & kinh nghiệm mới nhất"
+        description="Tổng hợp tin tức, bài viết chuyên sâu về thi công trần thạch cao, sơn bả, cải tạo nhà và báo giá cập nhật tại Hà Nội."
+        keywords="tin tức thạch cao, bài viết sửa nhà hà nội, kinh nghiệm thi công trần thạch cao, báo giá sửa nhà"
         type="website"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "Bài viết & kinh nghiệm sửa nhà Hà Nội",
-          url: `${window.location.origin}/bai-viet`,
+          url: `${window.location.origin}/tin-tuc`,
           description:
             "Chia sẻ kinh nghiệm thi công, bảng giá và giải pháp sửa chữa nhà ở thực tế tại Hà Nội.",
           publisher: {
@@ -42,7 +42,7 @@ const Articles = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-bold"
             >
-              Bài Viết & Kinh Nghiệm
+              Tin Tức & Kinh Nghiệm
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const Articles = () => {
               transition={{ delay: 0.1 }}
               className="text-lg text-muted-foreground"
             >
-              Cập nhật báo giá thi công, kinh nghiệm sửa nhà và các lưu ý kỹ thuật thực tế giúp bạn tối ưu chi phí và thẩm mỹ.
+              Cập nhật tin tức, báo giá thi công, kinh nghiệm sửa nhà và các lưu ý kỹ thuật thực tế giúp bạn tối ưu chi phí và thẩm mỹ.
             </motion.p>
           </div>
 
