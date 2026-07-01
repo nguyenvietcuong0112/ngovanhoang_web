@@ -6,8 +6,10 @@ export const refImages = {
     "/images/ref/td435435.jpg",
   ],
   wall: [
-    "/images/ref/anh-quy-trinh-moi-tt-03.jpg",
-    "/images/ref/anh-quy-trinh-moi-tt-07.jpg",
+    "/images/vachthachcao1.jpg",
+    "/images/vachthachcao2.jpg",
+    "/images/vachthachcao3.jpg",
+    "/images/vachthachcao4.jpg",
   ],
   repair: [
     "/images/ref/anh-thuc-te-thao-ro-thach-cao-03-1.jpg",

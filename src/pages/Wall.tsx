@@ -10,8 +10,6 @@ const Wall = () => (
     keywords="thi công vách thạch cao, vách ngăn thạch cao, báo giá vách thạch cao hà nội"
     heroTitle="Làm vách thạch cao đẹp, chắc, báo giá rõ trước khi thi công"
     heroSubtitle="Cần chia phòng, ngăn văn phòng, cải tạo cửa hàng hoặc che tường cũ? Chúng tôi nhận thi công vách thạch cao trọn gói tại Hà Nội."
-    images={[...refImages.wall]}
-    imageAlt="Hình ảnh thi công vách thạch cao"
     extra={
       <div className="max-w-5xl mx-auto">
         <PricingTables
@@ -28,6 +26,7 @@ const Wall = () => (
       Đo diện tích, kiểm tra hiện trạng, tư vấn loại vách rồi mới chốt chi phí thi công.
       Bảng giá dưới đây giúp bạn ước tính chi phí ban đầu.
     </p>
+    <img src="/images/vachthachcao1.jpg" alt="Khảo sát và tư vấn vách thạch cao" className="w-full rounded-2xl shadow-sm border border-neutral-100 my-6" />
 
     <h2>Các hạng mục thi công vách thạch cao</h2>
     <ul>
@@ -38,6 +37,7 @@ const Wall = () => (
       <li><strong>Vách ngăn văn phòng, cửa hàng:</strong> Tiết kiệm thời gian và chi phí so với xây tường gạch.</li>
       <li><strong>Sửa chữa, tháo dỡ vách thạch cao:</strong> Xử lý vách cũ, hư hỏng hoặc cải tạo không gian.</li>
     </ul>
+    <img src="/images/vachthachcao2.jpg" alt="Các hạng mục thi công vách thạch cao" className="w-full rounded-2xl shadow-sm border border-neutral-100 my-6" />
 
     <h2>Tư vấn vật tư trước khi thi công</h2>
     <p>
@@ -46,6 +46,7 @@ const Wall = () => (
       Vách cao, mặt bằng khó, cần tháo dỡ hoặc sơn bả hoàn thiện sẽ cần khảo sát cụ thể.
       Không nên chọn vách chỉ theo giá rẻ — cần cân nhắc độ bền, mục đích sử dụng và vật tư phù hợp.
     </p>
+    <img src="/images/vachthachcao3.jpg" alt="Tư vấn vật tư thi công vách thạch cao" className="w-full rounded-2xl shadow-sm border border-neutral-100 my-6" />
 
     <h2>Quy trình thi công vách thạch cao</h2>
     <ol>
@@ -55,6 +56,7 @@ const Wall = () => (
       <li>Thi công lắp khung, bắn tấm, xử lý mối nối và hoàn thiện.</li>
       <li>Kiểm tra, dọn dẹp và bàn giao.</li>
     </ol>
+    <img src="/images/vachthachcao4.jpg" alt="Quy trình thi công vách thạch cao" className="w-full rounded-2xl shadow-sm border border-neutral-100 my-6" />
 
     <h2>Cam kết khi thi công</h2>
     <p>
