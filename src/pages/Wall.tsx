@@ -37,7 +37,6 @@ const Wall = () => (
       <li><strong>Vách ngăn văn phòng, cửa hàng:</strong> Tiết kiệm thời gian và chi phí so với xây tường gạch.</li>
       <li><strong>Sửa chữa, tháo dỡ vách thạch cao:</strong> Xử lý vách cũ, hư hỏng hoặc cải tạo không gian.</li>
     </ul>
-    <img src="/images/vachthachcao2.jpg" alt="Các hạng mục thi công vách thạch cao" className="w-full rounded-2xl shadow-sm border border-neutral-100 my-6" />
 
     <h2>Tư vấn vật tư trước khi thi công</h2>
     <p>
