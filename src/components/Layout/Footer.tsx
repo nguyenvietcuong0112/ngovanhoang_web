@@ -9,8 +9,11 @@ const Footer = () => {
           {/* Brand + Social Media */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="w-10 h-10 object-contain" />
-              <span className="text-2xl font-bold text-amber-400">Sửa nhà Hà Nội</span>
+              <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="h-14 w-auto object-contain drop-shadow-lg" />
+              <div className="flex flex-col">
+                <span className="text-xl font-extrabold tracking-wide bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent leading-tight">SỬA NHÀ HÀ NỘI</span>
+                <span className="text-[10px] uppercase tracking-widest text-cyan-400 font-semibold">Thi công trần vách thạch cao trọn gói</span>
+              </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
               Kiến tạo không gian sống mơ ước. Chúng tôi chuyên thi công trần thạch cao, sơn bả tường và sơn tường nhà trọn gói với chất lượng và độ bền vượt trội.

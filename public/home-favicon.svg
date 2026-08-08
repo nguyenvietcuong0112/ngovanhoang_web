@@ -1,3 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#D4AF37">
-  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+  </defs>
+  <!-- Modern Geometric Interlocking House & Ceiling Icon -->
+  <path d="M15 48 L48 18 L81 48 L71 58 L48 36 L25 58 Z" fill="url(#cyanGlow)" />
+  <path d="M25 78 L58 48 L91 78 L81 88 L58 66 L35 88 Z" fill="url(#goldGlow)" />
 </svg>

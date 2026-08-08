@@ -22,9 +22,20 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src="/logo.png" alt="Logo Sửa nhà Hà Nội" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform" />
-            <span className="text-2xl font-bold text-primary group-hover:scale-105 transition-transform">Sửa nhà Hà Nội</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src="/logo.png" 
+              alt="Logo Sửa nhà Hà Nội" 
+              className="h-12 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-all duration-300" 
+            />
+            <div className="flex flex-col">
+              <span className="text-lg xl:text-xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent group-hover:opacity-90 transition-opacity leading-tight">
+                SỬA NHÀ HÀ NỘI
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 hidden sm:block">
+                Thi công thạch cao & Sơn nhà
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
