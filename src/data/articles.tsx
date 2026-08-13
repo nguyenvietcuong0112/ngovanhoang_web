@@ -33,6 +33,276 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    title: "Phá Dỡ Nhà Cũ Tại Hà Nội: Bảng Giá, Quy Trình Và Những Điều Cần Biết Năm 2026",
+    description: "Tổng hợp thông tin chi tiết về chi phí, bảng giá đục phá bê tông, quy trình an toàn và lưu ý quan trọng khi phá dỡ nhà cũ tại Hà Nội năm 2026.",
+    date: "13/08/2026",
+    category: "Phá dỡ công trình",
+    slug: "pha-do-nha-cu-tai-ha-noi",
+    image: "/images/phadonha1.jpg",
+    content: (
+      <div className="space-y-8 text-muted-foreground leading-relaxed">
+        <div className="space-y-4">
+          <p className="text-lg">
+            Ngôi nhà xuống cấp, không còn phù hợp với nhu cầu sử dụng, hay đơn giản là bạn chuẩn bị xây mới? Trước khi khởi công, phá dỡ công trình cũ luôn là bước đầu tiên và cũng là bước tiềm ẩn nhiều rủi ro nếu không thực hiện đúng kỹ thuật. Bài viết dưới đây tổng hợp những thông tin cần thiết về chi phí, quy trình và lưu ý an toàn khi phá dỡ nhà tại Hà Nội.
+          </p>
+        </div>
+
+        {/* Video thực tế */}
+        <div className="space-y-3 bg-secondary/60 p-4 md:p-6 rounded-3xl border border-primary/10">
+          <h3 className="text-xl font-bold text-charcoal flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+            Video Thực Tế Thi Công Phá Dỡ Công Trình Tại Hà Nội
+          </h3>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg bg-black aspect-video">
+            <video
+              controls
+              preload="metadata"
+              poster="/images/phadonha1.jpg"
+              className="w-full h-full object-cover"
+            >
+              <source src="/video/video_phadonha.mp4" type="video/mp4" />
+              Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+          </div>
+          <p className="text-center text-xs italic text-muted-foreground">
+            Video ghi nhận thực tế quá trình máy móc và đội ngũ thợ thi công phá dỡ công trình an toàn, chuyên nghiệp.
+          </p>
+        </div>
+
+        {/* 1. Khi Nào Cần Phá Dỡ Nhà Cũ */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">1. Khi Nào Cần Phá Dỡ Nhà Cũ?</h3>
+          <p>
+            Không phải công trình xuống cấp nào cũng cần đập bỏ hoàn toàn. Việc quyết định phá dỡ hay cải tạo nên dựa trên khảo sát thực tế, thường rơi vào các trường hợp sau:
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+            <li className="p-4 bg-secondary rounded-2xl border border-charcoal/5">
+              <strong className="text-primary block mb-1">Kết cấu chịu lực đã suy yếu:</strong> Nhà nghiêng, lún móng, nứt dầm cột, ảnh hưởng nghiêm trọng đến an toàn sử dụng lâu dài.
+            </li>
+            <li className="p-4 bg-secondary rounded-2xl border border-charcoal/5">
+              <strong className="text-primary block mb-1">Công trình quá cũ:</strong> Không còn đáp ứng tiêu chuẩn xây dựng hiện hành, không đảm bảo được độ bền và khả năng chịu lực.
+            </li>
+            <li className="p-4 bg-secondary rounded-2xl border border-charcoal/5">
+              <strong className="text-primary block mb-1">Không phù hợp công năng:</strong> Diện tích chật hẹp, bố cục không đáp ứng nhu cầu sinh hoạt của gia đình.
+            </li>
+            <li className="p-4 bg-secondary rounded-2xl border border-charcoal/5">
+              <strong className="text-primary block mb-1">Sửa chữa tốn kém:</strong> Chi phí gia cố, cải tạo gần bằng hoặc vượt chi phí phá dỡ để xây mới.
+            </li>
+            <li className="p-4 bg-secondary rounded-2xl border border-charcoal/5 md:col-span-2">
+              <strong className="text-primary block mb-1">Hư hỏng do tác động bên ngoài:</strong> Tác động do thiên tai, hỏa hoạn, sụt lún nền đất xung quanh công trình.
+            </li>
+          </ul>
+        </div>
+
+        {/* 2. Yếu Tố Ảnh Hưởng Chi Phí */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">2. Các Yếu Tố Ảnh Hưởng Đến Chi Phí Phá Dỡ</h3>
+          <p>Giá phá dỡ nhà không cố định mà phụ thuộc vào nhiều yếu tố thực tế tại công trình:</p>
+          <div className="bg-secondary p-6 rounded-2xl border-l-4 border-primary space-y-3 text-sm">
+            <p>• <strong>Kết cấu công trình:</strong> Nhà cấp 4, nhà khung bê tông cốt thép hay nhà có tường chịu lực sẽ có mức giá khác nhau.</p>
+            <p>• <strong>Diện tích và số tầng:</strong> Công trình càng lớn, càng cao thì chi phí nhân công, máy móc càng tăng.</p>
+            <p>• <strong>Vị trí thi công:</strong> Nhà trong ngõ nhỏ, khó vận chuyển phế thải thường phát sinh thêm chi phí so với mặt đường lớn.</p>
+            <p>• <strong>Phương pháp phá dỡ:</strong> Phá thủ công, dùng máy móc cơ giới, hay kết hợp cả hai tùy vào điều kiện mặt bằng.</p>
+            <p>• <strong>Khối lượng phế thải:</strong> Khối lượng phế thải cần vận chuyển và quy định xử lý rác thải xây dựng tại từng khu vực.</p>
+          </div>
+        </div>
+
+        {/* Bộ hình ảnh thi công thực tế 1 */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-charcoal">Hình Ảnh Thi Công Phá Dỡ Thực Tế</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-100 group">
+              <img
+                src="/images/phadonha1.jpg"
+                alt="Thi công phá dỡ nhà cũ chuyên nghiệp"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <p className="p-3 text-xs text-center bg-neutral-100 italic">Hình 1: Đội ngũ thi công phá dỡ công trình nhà cũ an toàn</p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-100 group">
+              <img
+                src="/images/phadonha2.jpg"
+                alt="Sử dụng thiết bị chuyên dụng phá dỡ bê tông"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <p className="p-3 text-xs text-center bg-neutral-100 italic">Hình 2: Phá dỡ tường và kết cấu bê tông bằng thiết bị hiện đại</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Bảng Giá Tham Khảo */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">3. Bảng Giá Tham Khảo Phá Dỡ Nhà Tại Hà Nội</h3>
+          <div className="bg-secondary p-6 rounded-2xl border-t-4 border-primary overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="text-primary font-bold border-b border-primary/20">
+                <tr>
+                  <th className="pb-3 min-w-[200px]">Hạng mục</th>
+                  <th className="pb-3 text-center min-w-[90px]">Đơn vị tính</th>
+                  <th className="pb-3 text-right min-w-[180px]">Đơn giá tham khảo (VNĐ)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-charcoal/5">
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Phá dỡ nhà khung cột, tường 110 (BTCT)</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">100.000 – 280.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Phá dỡ nhà có tường chịu lực</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">150.000 – 350.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Đào móng, xử lý nền cũ</td>
+                  <td className="py-3 text-center">m³</td>
+                  <td className="py-3 text-right font-bold text-primary">170.000 – 350.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Đục phá nền nhà + vận chuyển</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">90.000 – 120.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Phá dỡ tường ngăn cũ + vận chuyển</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">80.000 – 100.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Phá dỡ sàn bê tông cốt thép</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">350.000 – 450.000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 font-medium text-charcoal">Phá dỡ nhà xưởng, công trình công nghiệp</td>
+                  <td className="py-3 text-center">m²</td>
+                  <td className="py-3 text-right font-bold text-primary">Liên hệ khảo sát</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs italic text-muted-foreground">
+            * Bảng giá chỉ mang tính tham khảo, chi phí thực tế sẽ được báo chính xác sau khi khảo sát công trình.
+          </p>
+        </div>
+
+        {/* 4. Quy Trình Phá Dỡ */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">4. Quy Trình Phá Dỡ Nhà An Toàn, Chuyên Nghiệp</h3>
+          <p>Một đơn vị thi công uy tín thường triển khai theo 6 bước sau để đảm bảo tiến độ và an toàn:</p>
+          <div className="space-y-3">
+            {[
+              { step: "1", title: "Tiếp nhận thông tin & tư vấn sơ bộ", desc: "Tư vấn qua điện thoại, Zalo hoặc đặt lịch hẹn khảo sát trực tiếp công trình." },
+              { step: "2", title: "Khảo sát hiện trạng công trình", desc: "Đánh giá kết cấu, mặt bằng thi công, lối vận chuyển và các công trình liền kề." },
+              { step: "3", title: "Lập phương án & báo giá chi tiết", desc: "Báo giá theo từng hạng mục rõ ràng, minh bạch với khách hàng trước khi thi công." },
+              { step: "4", title: "Ký hợp đồng thi công", desc: "Quy định rõ tiến độ, chi phí trọn gói và trách nhiệm an toàn lao động các bên." },
+              { step: "5", title: "Thi công phá dỡ an toàn", desc: "Tuân thủ nguyên tắc phá từ trên xuống, từ ngoài vào trong; che chắn, phun nước hạn chế bụi; thu gom và vận chuyển phế thải đúng nơi quy định." },
+              { step: "6", title: "Nghiệm thu & bàn giao mặt bằng", desc: "Nghiệm thu sau khi hoàn tất, dọn dẹp sạch sẽ mặt bằng và thanh toán theo thỏa thuận." },
+            ].map((s) => (
+              <div key={s.step} className="flex gap-4 p-4 bg-secondary/60 rounded-2xl border border-charcoal/5 items-start">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">
+                  {s.step}
+                </div>
+                <div>
+                  <h4 className="font-bold text-charcoal">{s.title}</h4>
+                  <p className="text-sm text-muted-foreground">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bộ hình ảnh thi công thực tế 2 */}
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-100 group">
+              <img
+                src="/images/phadonha3.jpg"
+                alt="Thu gom xà bần phế thải công trình"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <p className="p-3 text-xs text-center bg-neutral-100 italic">Hình 3: Vận chuyển phế thải xây dựng nhanh gọn, đúng quy định</p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-100 group">
+              <img
+                src="/images/phadonha4.jpg"
+                alt="Hoàn tất phá dỡ bàn giao mặt bằng"
+                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <p className="p-3 text-xs text-center bg-neutral-100 italic">Hình 4: Mặt bằng sạch sẽ được bàn giao sau khi phá dỡ hoàn tất</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 5. Lưu Ý Quan Trọng */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">5. Lưu Ý Quan Trọng Khi Phá Dỡ Nhà Trong Khu Dân Cư</h3>
+          <p>Phá dỡ nhà tại các khu vực đông dân cư, ngõ nhỏ cần đặc biệt cẩn trọng:</p>
+          <ul className="list-disc pl-6 space-y-2 text-sm">
+            <li>Che chắn công trình bằng bạt, lưới an toàn để hạn chế bụi và tiếng ồn ảnh hưởng nhà xung quanh.</li>
+            <li>Phun nước làm ẩm bề mặt trước khi phá để giảm phát tán bụi.</li>
+            <li>Sử dụng thiết bị phù hợp với mặt bằng: máy cắt cầm tay, búa phá cho khu vực chật hẹp; máy xúc, máy phá cỡ lớn cho mặt bằng rộng.</li>
+            <li>Có phương án gia cố, bảo vệ nhà liền kề trước khi thi công, tránh rung chấn gây nứt lún.</li>
+            <li>Vận chuyển phế thải đúng giờ quy định, đúng nơi tập kết theo yêu cầu của địa phương.</li>
+          </ul>
+        </div>
+
+        {/* 6. Vì Sao Nên Chọn Đơn Vị Chuyên Nghiệp */}
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-charcoal">6. Vì Sao Nên Chọn Đơn Vị Phá Dỡ Chuyên Nghiệp?</h3>
+          <p>
+            Tự ý thuê thợ tự do để tiết kiệm chi phí có thể tiềm ẩn rủi ro về an toàn lao động, ảnh hưởng công trình lân cận và phát sinh chi phí ngoài dự kiến. Một đơn vị thi công chuyên nghiệp sẽ mang lại:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="p-4 bg-primary/5 rounded-2xl border-l-4 border-primary">
+              <h4 className="font-bold text-charcoal mb-1">Báo giá rõ ràng</h4>
+              <p>Khảo sát và báo giá minh bạch, hạn chế phát sinh trong quá trình thi công.</p>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-2xl border-l-4 border-primary">
+              <h4 className="font-bold text-charcoal mb-1">Máy móc hiện đại</h4>
+              <p>Đội ngũ có kinh nghiệm, máy móc phù hợp với từng loại công trình.</p>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-2xl border-l-4 border-primary">
+              <h4 className="font-bold text-charcoal mb-1">Cam kết an toàn</h4>
+              <p>Đảm bảo an toàn tuyệt đối cho công trình và khu vực xung quanh.</p>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-2xl border-l-4 border-primary">
+              <h4 className="font-bold text-charcoal mb-1">Xử lý phế thải sạch</h4>
+              <p>Xử lý phế thải đúng quy định, dọn dẹp mặt bằng sạch sẽ sau khi hoàn thành.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Thông tin liên hệ */}
+        <div className="p-6 md:p-8 bg-charcoal text-white rounded-3xl text-center space-y-4 shadow-xl">
+          <h4 className="text-2xl font-bold text-primary-foreground">Sửa Nhà Hà Nội</h4>
+          <p className="text-sm text-neutral-300 max-w-xl mx-auto">
+            Chuyên phá dỡ nhà cũ, đào móng, đục phá bê tông và thi công cải tạo nhà tại Hà Nội.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <a
+              href="tel:0388423600"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-all shadow-md text-sm"
+            >
+              📞 Hotline: 0388.423.600
+            </a>
+            <a
+              href="https://zalo.me/0388423600"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-charcoal font-bold rounded-full hover:bg-neutral-100 transition-all shadow-md text-sm"
+            >
+              💬 Chat Zalo tư vấn
+            </a>
+          </div>
+          <p className="text-xs text-neutral-400 italic">
+            * Liên hệ ngay để được khảo sát và báo giá miễn phí!
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Báo Giá Chi Tiết Thi Công Trần Và Vách Thạch Cao 2026",
     description: "Tổng hợp đơn giá thi công trần phẳng, trần giật cấp và vách ngăn thạch cao 1-2 mặt sử dụng khung xương Vĩnh Tường, Hà Nội.",
     date: "16/04/2026",

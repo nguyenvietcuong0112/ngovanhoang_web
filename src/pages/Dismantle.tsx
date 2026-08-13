@@ -64,6 +64,13 @@ const Dismantle = () => (
     </ol>
 
     <p>
+      Xem thêm bài viết chi tiết:{" "}
+      <a href="/bai-viet/pha-do-nha-cu-tai-ha-noi" className="text-primary font-bold underline hover:text-primary/80">
+        Phá Dỡ Nhà Cũ Tại Hà Nội: Bảng Giá, Quy Trình Và Những Điều Cần Biết Năm 2026
+      </a>
+    </p>
+
+    <p>
       Khách hàng có thể gửi ảnh trần, vách cần tháo dỡ, diện tích dự kiến và địa chỉ công trình qua{" "}
       <a href={ZALO_URL} className="text-primary font-bold no-underline hover:underline" target="_blank" rel="noopener noreferrer">
         Zalo

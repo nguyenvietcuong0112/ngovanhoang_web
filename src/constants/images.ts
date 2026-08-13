@@ -16,6 +16,10 @@ export const refImages = {
     "/images/ref/anh-thuc-te-thao-ro-thach-cao-02-1.jpg",
   ],
   dismantle: [
+    "/images/phadonha1.jpg",
+    "/images/phadonha2.jpg",
+    "/images/phadonha3.jpg",
+    "/images/phadonha4.jpg",
     "/images/ref/anh-thuc-te-thao-ro-thach-cao-01.jpg",
     "/images/ref/anh-thuc-te-thao-ro-thach-cao-02.jpg",
     "/images/ref/anh-thuc-te-thao-ro-thach-cao-03.jpg",

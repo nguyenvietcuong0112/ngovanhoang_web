@@ -13,6 +13,7 @@ const Header = () => {
     { name: "Vách thạch cao", to: "/vach-thach-cao" },
     { name: "Sửa chữa thạch cao", to: "/sua-chua-thach-cao" },
     { name: "Tháo dỡ thạch cao", to: "/thao-do-thach-cao" },
+    { name: "Phá dỡ nhà", to: "/bai-viet/pha-do-nha-cu-tai-ha-noi" },
     { name: "Tin tức", to: "/tin-tuc" },
     { name: "Liên hệ", to: "/lien-he" },
   ];

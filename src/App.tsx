@@ -26,6 +26,7 @@ const App = () => (
       <Route path="/vach-thach-cao" element={<Wall />} />
       <Route path="/sua-chua-thach-cao" element={<Repair />} />
       <Route path="/thao-do-thach-cao" element={<Dismantle />} />
+      <Route path="/pha-do-nha" element={<Navigate to="/bai-viet/pha-do-nha-cu-tai-ha-noi" replace />} />
       <Route path="/tin-tuc" element={<News />} />
       <Route path="/lien-he" element={<Contact />} />
       <Route path="/dich-vu" element={<Services />} />
