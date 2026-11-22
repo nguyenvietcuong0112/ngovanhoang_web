@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import ArticleDetail from "./pages/ArticleDetail";
+import Paint from "./pages/Paint";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingContact from "./components/Layout/FloatingContact";
@@ -26,6 +27,7 @@ const App = () => (
       <Route path="/vach-thach-cao" element={<Wall />} />
       <Route path="/sua-chua-thach-cao" element={<Repair />} />
       <Route path="/thao-do-thach-cao" element={<Dismantle />} />
+      <Route path="/son-lai-nha" element={<Paint />} />
       <Route path="/pha-do-nha" element={<Navigate to="/bai-viet/pha-do-nha-cu-tai-ha-noi" replace />} />
       <Route path="/tin-tuc" element={<News />} />
       <Route path="/lien-he" element={<Contact />} />

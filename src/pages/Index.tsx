@@ -1,784 +1,334 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
-import PricingTables from "@/components/PricingTables";
-import { articles, type Article } from "@/data/articles";
-import { trackAdsConversion } from "@/utils/gtag";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  CheckCircle2,
-  Phone,
-  MessageSquare,
-  ShieldCheck,
-  Zap,
-  Clock,
-  Star,
-  MapPin,
-  Mail,
-  Home,
-  Hammer,
-  Paintbrush,
-  Layout
-} from "lucide-react";
+import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import HoangPhatLayout from "@/components/HoangPhatLayout";
+import SEO from "@/components/SEO";
+import { TelLink, ZaloLink } from "@/components/HoangPhatLinks";
 
-// ================= ASSETS =================
-import hero_ceiling from "/src/assets/hero-ceiling.png";
-import hero_renovation from "/src/assets/hero-renovation.png";
-import hero_decor from "/src/assets/hero-construction-modern.jpg";
-import feat_ceiling from "/src/assets/feat-ceiling.png";
-
-
-const slides = [
-  {
-    title: "Thi công trần thạch cao – Sơn bả – Sơn tường chuyên nghiệp",
-    subTitle: "Đẹp – Bền – Giá hợp lý – Thi công nhanh",
-    description: "Chúng tôi chuyên thi công trần thạch cao, sơn bả tường và sơn tường nhà ở, chung cư, văn phòng với đội ngũ thợ nhiều năm kinh nghiệm.",
-    image: hero_ceiling,
-  },
-  {
-    title: "Hoàn thiện nội thất cơ bản với chất lượng vượt trội",
-    subTitle: "Tận tâm trong từng chi tiết công trình",
-    description: "Dịch vụ trọn gói từ khâu khảo sát đến thi công hoàn thiện, đảm bảo thẩm mỹ và độ bền cao nhất cho ngôi nhà của bạn.",
-    image: hero_decor,
-  },
-  {
-    title: "Mang phong thái hiện đại vào không gian sống của bạn",
-    subTitle: "Sửa nhà Hà Nội – Uy tín tạo niềm tin",
-    description: "Sử dụng vật liệu chính hãng, quy trình thi công đạt chuẩn, bảo hành dài hạn cho mọi công trình.",
-    image: hero_renovation,
-  }
-];
+const HASH_ROUTE_MAP: Record<string, string> = {
+  "#tran": "/tran-thach-cao",
+  "#vach": "/vach-thach-cao",
+  "#sua": "/sua-chua-thach-cao",
+  "#pha": "/thao-do-thach-cao",
+  "#son": "/son-lai-nha",
+  "#gia": "/bao-gia",
+};
 
 const Index = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [galleryFilter, setGalleryFilter] = useState("all");
+  const { hash } = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const advantages = [
-    { title: "Thi công nhanh chóng", icon: <Zap className="w-6 h-6 text-primary" /> },
-    { title: "Giá cả cạnh tranh", icon: <CheckCircle2 className="w-6 h-6 text-primary" /> },
-    { title: "Vật liệu chất lượng", icon: <ShieldCheck className="w-6 h-6 text-primary" /> },
-    { title: "Bảo hành công trình", icon: <Star className="w-6 h-6 text-primary" /> },
-  ];
-
-  const galleryItems = [
-    { title: "Trần thạch cao phòng khách", category: "nha-o", image: hero_ceiling },
-    { title: "Hệ thống trần giật cấp hiện đại", category: "chung-cu", image: feat_ceiling },
-    { title: "Phòng ngủ ấm cúng với trần phẳng", category: "nha-o", image: hero_renovation },
-    { title: "Văn phòng làm việc sang trọng", category: "van-phong", image: hero_decor },
-    { title: "Sơn bả mịn màng cho căn hộ", category: "chung-cu", image: feat_ceiling },
-    { title: "Hoàn thiện tường nhà phố", category: "nha-o", image: hero_renovation },
-  ];
-
-  const filteredGallery = galleryFilter === "all"
-    ? galleryItems
-    : galleryItems.filter(item => item.category === galleryFilter);
-  const showExtendedHome = false;
+    const target = HASH_ROUTE_MAP[hash];
+    if (target) {
+      navigate(target, { replace: true });
+    }
+  }, [hash, navigate]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground scroll-smoothSelection">
-      <Header />
+    <HoangPhatLayout>
+      <SEO
+        title="Thi công thạch cao & sơn nhà Hà Nội | Trần, vách, sửa chữa, phá dỡ - Bảo hành 5 năm"
+        description="Thi công trần thạch cao, vách thạch cao, sửa chữa thạch cao, phá dỡ thạch cao và sơn lại nhà tại Hà Nội. Báo giá miễn phí, thợ tay nghề cao, bảo hành đến 5 năm."
+      />
+
+      <header className="hm hero">
+        <div className="hero-in">
+          <div>
+            <p className="kick">THI CÔNG TRỌN GÓI TẠI HÀ NỘI</p>
+            <h1>
+              <span className="t1">THẠCH CAO</span>
+              <span className="t2">SƠN NHÀ</span>
+              <span className="vh"> trọn gói tại Hà Nội</span>
+            </h1>
+            <div className="rib">TRẦN · VÁCH · SỬA CHỮA · PHÁ DỠ · SƠN</div>
+            <p className="sl">Thi công trọn gói – Chất lượng vượt trội</p>
+          </div>
+          <div className="hr">
+            <img
+              src="/images/hoangphat/img-01.webp"
+              alt="Thi công trần thạch cao giật cấp khe bóng đổ tại Hà Nội"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div className="feat">
+          <div>
+            <i>✓</i>Đội ngũ thợ nhiều năm kinh nghiệm
+          </div>
+          <div>
+            <i>✓</i>Khảo sát, tư vấn miễn phí
+          </div>
+          <div>
+            <i>✓</i>Thi công trực tiếp, không qua trung gian
+          </div>
+          <div>
+            <i>✓</i>Giá cả cạnh tranh, báo giá rõ ràng
+          </div>
+          <div>
+            <i>✓</i>Bảo hành, hậu mãi chu đáo
+          </div>
+        </div>
+
+        <div className="bar">
+          <div className="bar-actions">
+            <TelLink className="phone">📞 0388.423.600</TelLink>
+            <ZaloLink className="cta z">Chat Zalo nhận báo giá</ZaloLink>
+          </div>
+          <div className="badge">
+            CAM KẾT
+            <br />
+            Chất lượng
+            <br />
+            Tiến độ
+            <br />
+            Giá tốt
+          </div>
+        </div>
+
+        <div className="ic">
+          <div>
+            <span>🏅</span>Vật tư chính hãng
+          </div>
+          <div>
+            <span>💰</span>Giá tốt, báo giá rõ
+          </div>
+          <div>
+            <span>⏱️</span>Thi công đúng hẹn
+          </div>
+          <div>
+            <span>🎧</span>Tư vấn nhiệt tình
+          </div>
+        </div>
+
+        <div className="gr">
+          THI CÔNG TRỌN GÓI: TRẦN THẠCH CAO · VÁCH THẠCH CAO · SỬA CHỮA · SƠN HOÀN THIỆN
+        </div>
+
+        <div className="ph4">
+          <figure>
+            <img
+              src="/images/hoangphat/img-02.webp"
+              alt="Thi công trần thạch cao giật cấp nhà phố"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Thi công trần thạch cao</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/hoangphat/img-03.webp"
+              alt="Dựng khung xương vách ngăn thạch cao văn phòng"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Dựng vách ngăn</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/hoangphat/img-04.webp"
+              alt="Thợ sửa chữa thạch cao tại công trình"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Sửa chữa thạch cao</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="/images/hoangphat/img-05.webp"
+              alt="Trần thạch cao giật cấp hoàn thiện đèn downlight"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Công trình hoàn thiện</figcaption>
+          </figure>
+        </div>
+      </header>
 
       <main>
-        {/* ================= HERO SECTION ================= */}
-        <section id="hero" className="relative h-screen flex items-center overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0"
-            >
-              <div className="absolute inset-0 bg-black/40 z-10" />
+        <section id="home" className="hm">
+          <h2>Dịch vụ của chúng tôi</h2>
+          <div className="sg">
+            <Link className="sv" to="/tran-thach-cao">
               <img
-                src={slides[activeSlide].image}
-                alt="Construction Banner"
-                className="w-full h-full object-cover"
+                src="/images/hoangphat/img-06.webp"
+                alt="Trần thạch cao giật cấp khe bóng đổ"
+                loading="lazy"
+                decoding="async"
               />
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="container relative z-20 mx-auto px-4 lg:px-8">
-            <div className="max-w-3xl space-y-6">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-4xl md:text-6xl font-bold text-white leading-tight"
-              >
-                {slides[activeSlide].title}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-xl md:text-2xl text-white/90 font-medium border-l-4 border-primary pl-4"
-              >
-                {slides[activeSlide].subTitle}
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-lg text-white/80 max-w-xl"
-              >
-                {slides[activeSlide].description}
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex flex-wrap gap-4 pt-4"
-              >
-                <Button asChild size="lg" className="rounded-full bg-primary hover:bg-primary-hover text-white px-8 h-12 text-base">
-                  <Link to="/bao-gia">Xem báo giá</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full border-2 border-white text-white hover:bg-white hover:text-primary-hover px-8 h-12 text-base backdrop-blur-sm bg-black/10">
-                  <Link to="/lien-he">Liên hệ tư vấn</Link>
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveSlide(idx)}
-                className={`w-3 h-3 rounded-full transition-all ${activeSlide === idx ? "bg-primary w-8" : "bg-white/50 hover:bg-white"}`}
+              <b>Trần thạch cao</b>
+              <span>Trần chìm (phẳng, giật cấp, khe bóng đổ, vòm) và trần thả 600x600.</span>
+              <em>Từ 110.000đ/m²</em>
+            </Link>
+            <Link className="sv" to="/vach-thach-cao">
+              <img
+                src="/images/hoangphat/img-07.webp"
+                alt="Vách ngăn thạch cao cách âm"
+                loading="lazy"
+                decoding="async"
               />
-            ))}
-          </div>
-        </section>
-
-
-
-        {/* ================= BẢNG GIÁ CHI TIẾT (Component) ================= */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 lg:px-8">
-            <PricingTables />
-          </div>
-        </section>
-
-        {/* ================= ARTICLES (below hero) ================= */}
-        <section id="bai-viet" className="py-24 bg-white scroll-mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="container mx-auto px-4 lg:px-8 space-y-16"
-          >
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">KIẾN THỨC & BÁO GIÁ</h2>
-              <h3 className="text-3xl md:text-5xl font-bold">Bài Viết & Kinh Nghiệm</h3>
-              <p className="text-lg text-muted-foreground">
-                Cập nhật báo giá thi công, kinh nghiệm sửa nhà và các lưu ý kỹ thuật thực tế giúp bạn tối ưu chi phí và thẩm mỹ.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {articles.map((article, idx) => (
-                <motion.div
-                  key={article.slug}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full border-none shadow-soft hover:shadow-premium transition-all overflow-hidden group flex flex-col rounded-3xl">
-                    <div className="relative aspect-video overflow-hidden">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute top-4 left-4">
-                        <span className="text-[10px] font-bold text-white uppercase bg-primary px-3 py-1 rounded-full shadow-lg">
-                          {article.category}
-                        </span>
-                      </div>
-                    </div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 + 0.05 }}
-                      viewport={{ once: true }}
-                      className="p-8 flex-grow space-y-4"
-                    >
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {article.date}
-                        </span>
-                      </div>
-                      <h4 className="text-2xl font-bold group-hover:text-primary transition-colors line-clamp-2 leading-tight">
-                        {article.title}
-                      </h4>
-                      <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
-                        {article.description}
-                      </p>
-                    </motion.div>
-                    <div className="px-8 pb-8 mt-auto">
-                      <Button
-                        asChild
-                        className="w-full rounded-full h-11 px-6 bg-primary text-white font-bold shadow-md hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all group/btn"
-                      >
-                        <Link to={`/bai-viet/${article.slug}`} className="flex items-center justify-center gap-2">
-                          Đọc bài viết <Zap className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
-
-        {/* ================= ABOUT US ================= */}
-        <section id="about" className="py-20 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 -z-10 rounded-lg" />
-                <img
-                  src={hero_decor}
-                  alt="Đội ngũ Sửa nhà Hà Nội"
-                  className="rounded-2xl shadow-premium border-8 border-secondary object-cover w-full h-[500px]"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-secondary hidden md:block">
-                  <p className="text-4xl font-bold text-primary">10+</p>
-                  <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Năm kinh nghiệm</p>
-                </div>
-              </motion.div>
-
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">GIỚI THIỆU VỀ CHÚNG TÔI</h2>
-                  <h3 className="text-3xl md:text-4xl font-bold leading-tight">
-                    Chuyên gia hoàn thiện nội thất và thi công trần thạch cao
-                  </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Sửa nhà Hà Nội là đơn vị hàng đầu trong lĩnh vực thi công trần thạch cao, sơn bả và sơn tường tại Hà Nội. Với đội ngũ thợ lành nghề, chúng tôi cam kết mang đến những không gian sống hiện đại, bền đẹp và sang trọng bậc nhất.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {advantages.map((adv, idx) => (
-                    <Card key={idx} className="border-none bg-secondary shadow-none hover:bg-neutral-100 transition-colors">
-                      <CardContent className="p-4 flex items-center gap-4">
-                        {adv.icon}
-                        <span className="font-semibold text-charcoal">{adv.title}</span>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                <p className="text-muted-foreground italic border-l-4 border-primary pl-4">
-                  "Chúng tôi không chỉ xây dựng những bức tường, chúng tôi kiến tạo không gian sống mơ ước cho mỗi gia đình Việt."
-                </p>
+              <b>Vách thạch cao</b>
+              <span>Vách ngăn phòng, vách ốp tường, vách cách âm, chống cháy.</span>
+              <em>Từ 170.000đ/m²</em>
+            </Link>
+            <Link className="sv" to="/sua-chua-thach-cao">
+              <img
+                src="/images/hoangphat/img-08.webp"
+                alt="Sửa chữa trần thạch cao"
+                loading="lazy"
+                decoding="async"
+              />
+              <b>Sửa chữa thạch cao</b>
+              <span>Xử lý trần nứt, võng, thấm dột, bong sơn, vá cục bộ.</span>
+              <em>Từ 500.000đ/lần</em>
+            </Link>
+            <Link className="sv" to="/thao-do-thach-cao">
+              <img
+                src="/images/hoangphat/img-09.webp"
+                alt="Phá dỡ trần thạch cao"
+                loading="lazy"
+                decoding="async"
+              />
+              <b>Phá dỡ thạch cao</b>
+              <span>Tháo dỡ trần, vách nhanh, thu gom phế thải, dọn sạch.</span>
+              <em>Từ 20.000đ/m²</em>
+            </Link>
+            <Link className="sv" to="/son-lai-nha">
+              <img
+                src="/images/hoangphat/img-10.webp"
+                alt="Sơn lại nhà Hà Nội"
+                loading="lazy"
+                decoding="async"
+              />
+              <b>Sơn lại nhà</b>
+              <span>Sơn trong và ngoài nhà, bả matit, chống thấm, sơn chính hãng.</span>
+              <em>Từ 35.000đ/m²</em>
+            </Link>
+            <Link className="sv" to="/bao-gia">
+              <div className="sv-price-thumb" aria-hidden="true">
+                <span>📋</span>
+                BẢNG GIÁ 2026
               </div>
+              <b>Bảng giá chi tiết</b>
+              <span>Đơn giá tham khảo toàn bộ hạng mục thạch cao và sơn nhà.</span>
+              <em>Xem bảng giá</em>
+            </Link>
+          </div>
+
+          <h2 style={{ marginTop: 30 }}>Công trình đã hoàn thiện</h2>
+          <div className="gl pt">
+            <figure>
+              <img
+                src="/images/hoangphat/img-11.webp"
+                alt="Trần thạch cao giật cấp bo cong phòng khách lớn tại Hà Nội"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Trần giật cấp bo cong phòng khách lớn</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/images/hoangphat/img-12.webp"
+                alt="Trần thạch cao khe bóng đổ hắt sáng cầu thang đèn chùm thông tầng"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Trần khe bóng đổ hắt sáng, đèn chùm thông tầng</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/images/hoangphat/img-13.webp"
+                alt="Trần thạch cao giật cấp đèn LED viền văn phòng hiện đại"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Trần giật cấp LED viền cho văn phòng</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="/images/hoangphat/img-14.webp"
+                alt="Trần thạch cao chìm giật cấp đã bả matit nhà phố"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Trần chìm giật cấp đã bả matit nhà phố</figcaption>
+            </figure>
+          </div>
+
+          <h2 style={{ marginTop: 30 }}>Quy trình làm việc</h2>
+          <div className="st">
+            <div>
+              <b>Tiếp nhận &amp; tư vấn</b>
+              <span>
+                Gọi hotline hoặc nhắn Zalo, mô tả nhu cầu, gửi ảnh hiện trạng để được tư vấn sơ bộ.
+              </span>
+            </div>
+            <div>
+              <b>Khảo sát tận nơi miễn phí</b>
+              <span>
+                Thợ đến đo đạc, kiểm tra hiện trạng, tư vấn kiểu trần, vật liệu, màu sơn phù hợp.
+              </span>
+            </div>
+            <div>
+              <b>Báo giá &amp; ký hợp đồng</b>
+              <span>
+                Báo giá chi tiết từng hạng mục, không phát sinh, thống nhất tiến độ và bảo hành bằng văn bản.
+              </span>
+            </div>
+            <div>
+              <b>Chuẩn bị vật tư &amp; lên lịch</b>
+              <span>
+                Chốt vật tư chính hãng, sắp xếp đội thợ, hẹn ngày giờ thi công thuận tiện cho gia chủ.
+              </span>
+            </div>
+            <div>
+              <b>Thi công &amp; giám sát</b>
+              <span>
+                Che chắn đồ đạc, thi công đúng quy trình, cập nhật tiến độ, dọn vệ sinh mỗi ngày.
+              </span>
+            </div>
+            <div>
+              <b>Nghiệm thu, bàn giao &amp; bảo hành</b>
+              <span>
+                Cùng chủ nhà kiểm tra chất lượng, thanh toán sau nghiệm thu, giao phiếu bảo hành và hỗ trợ sau thi công.
+              </span>
             </div>
           </div>
-        </section>
 
-        {/* ================= SERVICES ================= */}
-        <section id="services" className="py-24 bg-secondary">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">DỊCH VỤ CỦA CHÚNG TÔI</h2>
-              <h3 className="text-3xl md:text-5xl font-bold leading-tight">Giải pháp hoàn thiện ngôi nhà trọn gói</h3>
-              <p className="text-lg text-muted-foreground">
-                Mỗi dịch vụ tại Sửa nhà Hà Nội đều được kiểm soát chất lượng nghiêm ngặt, từ khâu chọn vật liệu đến kỹ thuật thi công.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Service 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="group p-8 bg-white rounded-2xl shadow-soft premium-card border-b-4 border-transparent hover:border-primary"
-              >
-                <div className="w-14 h-14 bg-accent flex items-center justify-center rounded-xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <Layout className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold mb-4">Thi công trần vách thạch cao</h4>
-                <p className="text-muted-foreground mb-6">Trần vách thạch cao không chỉ thẩm mỹ mà còn chống nóng, cách âm tốt. Phù hợp cho phòng khách, phòng ngủ và văn phòng.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần giật cấp, trần phẳng</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Vách ngăn thạch cao cách âm</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Trần thả tấm nhựa Nano</li>
-                </ul>
-
-              </motion.div>
-
-              {/* Service 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="group p-8 bg-white rounded-2xl shadow-soft premium-card border-b-4 border-transparent hover:border-primary"
-              >
-                <div className="w-14 h-14 bg-accent flex items-center justify-center rounded-xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <Hammer className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold mb-4">Sơn bả tường chuyên sâu</h4>
-                <p className="text-muted-foreground mb-6">Giúp bề mặt tường siêu mịn, phẳng và tăng tuổi thọ cho lớp sơn nước cao cấp. Công nghệ bả matit tiên tiến.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Bả matit bám dính tốt</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Xử lý bề mặt tường cũ</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Làm phẳng triệt để</li>
-                </ul>
-
-              </motion.div>
-
-              {/* Service 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="group p-8 bg-white rounded-2xl shadow-soft premium-card border-b-4 border-transparent hover:border-primary"
-              >
-                <div className="w-14 h-14 bg-accent flex items-center justify-center rounded-xl mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <Paintbrush className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold mb-4">Sơn nhà & Chống thấm</h4>
-                <p className="text-muted-foreground mb-6">Sơn nội thất, ngoại thất chất lượng cao bảo vệ ngôi nhà khỏi ẩm mốc và mang lại vẻ đẹp đẳng cấp.</p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Sơn nội/ngoại thất cao cấp</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Xử lý chống thấm ngược</li>
-                  <li className="flex items-center gap-2 text-sm font-medium"><CheckCircle2 className="w-4 h-4 text-primary" /> Phối màu sơn phong thủy</li>
-                </ul>
-
-              </motion.div>
-            </div>
+          <h2 style={{ marginTop: 30 }}>Đánh giá khách hàng</h2>
+          <div className="rv">
+            <blockquote>
+              “Trần giật cấp làm gọn, đèn led đều, thợ dọn dẹp sạch sẽ. Đúng hẹn 4 ngày.”
+              <cite>Chị Lan, Cầu Giấy · Trần thạch cao ★★★★★</cite>
+            </blockquote>
+            <blockquote>
+              “Chia phòng ngủ cho con trong 2 ngày, vách cách âm tốt hơn mong đợi.”
+              <cite>Chị Hương, Thanh Xuân · Vách thạch cao ★★★★★</cite>
+            </blockquote>
+            <blockquote>
+              “Trần phòng khách bị võng, thợ sửa trong 1 buổi, nhìn như mới.”
+              <cite>Chị Mai, Đống Đa · Sửa chữa thạch cao ★★★★★</cite>
+            </blockquote>
+            <blockquote>
+              “Phá trần cũ cả căn hộ 90m2 trong 1 ngày, dọn sạch không để lại gì.”
+              <cite>Anh Nam, Hoàng Mai · Phá dỡ thạch cao ★★★★★</cite>
+            </blockquote>
+            <blockquote>
+              “Sơn lại cả nhà 4 tầng, màu lên đúng ý, đúng tiến độ.”
+              <cite>Anh Vũ, Đông Anh · Sơn lại nhà ★★★★★</cite>
+            </blockquote>
+            <blockquote>
+              “Báo giá rõ từng hạng mục, không phát sinh. Sau 1 năm trần vẫn phẳng đẹp.”
+              <cite>Anh Tuấn, Hà Đông · Trần thạch cao ★★★★★</cite>
+            </blockquote>
           </div>
+
+          <p>
+            <TelLink className="cta">Nhận báo giá miễn phí</TelLink>
+          </p>
         </section>
-
-        <section className="py-16 bg-secondary">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
-              <h3 className="text-3xl md:text-4xl font-bold">Khám phá nhanh theo nhu cầu</h3>
-              <p className="text-muted-foreground">
-                Xem dịch vụ, bảng giá và công trình. Bài viết hiển thị ngay dưới banner trang chủ.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
-                <Link to="/dich-vu">Dịch vụ</Link>
-              </Button>
-              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
-                <a href="#bang-gia-anh">Bảng giá</a>
-              </Button>
-              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
-                <Link to="/cong-trinh">Công trình</Link>
-              </Button>
-              <Button asChild variant="outline" className="h-14 rounded-xl text-base">
-                <a href="#bai-viet">Bài viết</a>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {showExtendedHome && (
-          <>
-        {/* ================= PRICING TABLES ================= */}
-        <section id="pricing" className="py-24 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">BẢNG GIÁ THAM KHẢO</h2>
-              <h3 className="text-3xl md:text-5xl font-bold">Chi phí minh bạch & Hợp lý</h3>
-              <p className="text-lg text-muted-foreground underline underline-offset-8 decoration-primary decoration-2">
-                Giá có thể thay đổi tùy theo diện tích và hiện trạng công trình.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Price Table 1 */}
-              <Card className="border shadow-none rounded-2xl overflow-hidden hover:shadow-lg transition-all">
-                <div className="bg-primary p-6 text-center">
-                  <h5 className="text-white text-xl font-bold uppercase tracking-widest">Trần Thạch Cao</h5>
-                </div>
-                <CardContent className="p-0">
-                  <table className="w-full">
-                    <tbody className="divide-y">
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Trần phẳng</td>
-                        <td className="p-4 text-right font-bold text-primary italic">150k - 180k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Trần giật cấp</td>
-                        <td className="p-4 text-right font-bold text-primary italic">200k - 320k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Trần thả nội thất</td>
-                        <td className="p-4 text-right font-bold text-primary italic">160k - 190k/m2</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </CardContent>
-              </Card>
-
-              {/* Price Table 2 */}
-              <Card className="border shadow-none rounded-2xl overflow-hidden hover:shadow-lg transition-all">
-                <div className="bg-primary p-6 text-center">
-                  <h5 className="text-white text-xl font-bold uppercase tracking-widest">Sơn Bả Matit</h5>
-                </div>
-                <CardContent className="p-0">
-                  <table className="w-full">
-                    <tbody className="divide-y">
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Bả matit mịn</td>
-                        <td className="p-4 text-right font-bold text-primary italic">25k - 35k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Sơn lót tường</td>
-                        <td className="p-4 text-right font-bold text-primary italic">10k - 15k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Dặm vá tường cũ</td>
-                        <td className="p-4 text-right font-bold text-primary italic">Liên hệ</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </CardContent>
-              </Card>
-
-              {/* Price Table 3 */}
-              <Card className="border shadow-none rounded-2xl overflow-hidden hover:shadow-lg transition-all">
-                <div className="bg-primary p-6 text-center">
-                  <h5 className="text-white text-xl font-bold uppercase tracking-widest">Sơn Nước</h5>
-                </div>
-                <CardContent className="p-0">
-                  <table className="w-full">
-                    <tbody className="divide-y">
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Sơn nội thất</td>
-                        <td className="p-4 text-right font-bold text-primary italic">30k - 50k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Sơn ngoại thất</td>
-                        <td className="p-4 text-right font-bold text-primary italic">40k - 60k/m2</td>
-                      </tr>
-                      <tr>
-                        <td className="p-4 text-sm font-medium text-muted-foreground">Sơn chống thấm</td>
-                        <td className="p-4 text-right font-bold text-primary italic">Giá tốt nhất</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= GALLERY ================= */}
-        <section id="gallery" className="py-24 bg-neutral-50 overflow-hidden">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-              <div className="space-y-4">
-                <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">HÌNH ẢNH DỰ ÁN</h2>
-                <h3 className="text-3xl md:text-5xl font-bold">Các công trình đã thi công</h3>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { id: "all", label: "Tất cả" },
-                  { id: "nha-o", label: "Nhà ở" },
-                  { id: "chung-cu", label: "Chung cư" },
-                  { id: "van-phong", label: "Văn phòng" }
-                ].map(filter => (
-                  <Button
-                    key={filter.id}
-                    variant={galleryFilter === filter.id ? "default" : "outline"}
-                    onClick={() => setGalleryFilter(filter.id)}
-                    className="rounded-full px-6"
-                  >
-                    {filter.label}
-                  </Button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <AnimatePresence mode="popLayout">
-                {filteredGallery.map((item, idx) => (
-                  <motion.div
-                    layout
-                    key={`${item.category}-${idx}`}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="group relative cursor-pointer overflow-hidden rounded-2xl h-[300px]"
-                  >
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                      <p className="text-primary font-bold text-xs uppercase tracking-widest mb-2">
-                        {item.category === "nha-o" ? "Nhà ở" : item.category === "chung-cu" ? "Chung cư" : "Văn phòng"}
-                      </p>
-                      <h5 className="text-white text-xl font-bold">{item.title}</h5>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= ARTICLES SECTION ================= */}
-        <section id="articles" className="py-24 bg-white">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">KIẾN THỨC & BÁO GIÁ</h2>
-              <h3 className="text-3xl md:text-5xl font-bold leading-tight">Thông tin hữu ích cho ngôi nhà bạn</h3>
-              <p className="text-lg text-muted-foreground">
-                Chúng tôi chia sẻ kinh nghiệm thi công và cập nhật báo giá mới nhất để quý khách hàng dễ dàng tham khảo.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full border-none shadow-soft hover:shadow-lg transition-all overflow-hidden group flex flex-col">
-                    <div className="p-6 flex-grow space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold text-primary uppercase bg-primary/10 px-3 py-1 rounded-full">
-                          {article.category}
-                        </span>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1">
-                          <Zap className="w-3 h-3" /> {article.date}
-                        </span>
-                      </div>
-                      <h4 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-2">
-                        {article.title}
-                      </h4>
-                      <p className="text-muted-foreground text-sm line-clamp-3">
-                        {article.description}
-                      </p>
-                    </div>
-                    <div className="px-6 pb-6 mt-auto">
-                      <Button 
-                        asChild
-                        variant="link" 
-                        className="p-0 h-auto text-primary font-bold hover:no-underline group"
-                      >
-                        <Link to={`/bai-viet/${article.slug}`} className="flex items-center gap-2">
-                          Xem chi tiết <Zap className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="mt-16 text-center">
-              <Button asChild size="lg" variant="outline" className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-10">
-                <a href="#contact">Tư vấn báo giá ngay</a>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-
-        {/* ================= CONTACT ================= */}
-        <section id="contact" className="py-24 bg-background">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              <div className="space-y-12">
-                <div className="space-y-4">
-                  <h2 className="text-sm font-bold text-primary uppercase tracking-[0.2em]">LIÊN HỆ TƯ VẤN</h2>
-                  <h3 className="text-3xl md:text-5xl font-bold leading-tight">Gửi yêu cầu & Nhận báo giá nhanh</h3>
-                  <p className="text-lg text-muted-foreground">Đừng ngần ngại liên hệ với chúng tôi để được khảo sát và tư vấn mẫu thiết kế miễn phí tận nơi.</p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                      <Phone className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Điện thoại / Zalo</p>
-                      <p className="text-xl font-bold tracking-tight">0388.423.600</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                      <Mail className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Email hỗ trợ</p>
-                      <p className="text-xl font-bold tracking-tight">suanhataihanoi368@gmail.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">VP Đại diện</p>
-                      <div className="space-y-1">
-                        <p className="text-base font-bold tracking-tight">107 Ngọc Hồi, Hoàng Liệt, Hoàng Mai.</p>
-                        <p className="text-base font-bold tracking-tight">02/103 Phạm Ngọc Thạch, Đống Đa.</p>
-                        <p className="text-base font-bold tracking-tight">26 Mễ Trì Hạ, Từ Liêm.</p>
-                        <p className="text-base font-bold tracking-tight">196 Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="h-[200px] rounded-2xl overflow-hidden shadow-soft border grayscale hover:grayscale-0 transition-all">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.27643574514!2d105.79444391782226!3d21.0505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab226a7d6745%3A0x2f5d35362df5102e!2zVMOieSBI4buTLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-
-              <Card className="p-8 md:p-12 border-none shadow-gold bg-white h-fit">
-                {(() => {
-                  const [status, setStatus] = useState<"idle" | "success">("idle");
-                  
-                  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(e.currentTarget);
-                    const fullname = formData.get("fullname") as string;
-                    const phone = formData.get("phone") as string;
-                    const address = formData.get("address") as string;
-                    const message = formData.get("message") as string;
-                    
-                    const subject = encodeURIComponent(`Yêu cầu tư vấn: ${fullname}`);
-                    const body = encodeURIComponent(
-                      `Thông tin yêu cầu hỗ trợ từ website:\n\n` +
-                      `- Họ tên: ${fullname}\n` +
-                      `- Số điện thoại: ${phone}\n` +
-                      `- Địa chỉ công trình: ${address}\n` +
-                      `- Nội dung yêu cầu: ${message}`
-                    );
-                    
-                    trackAdsConversion({ sendTo: "AW-18069945204/TCWqCKS7nKocEPT2tahD" });
-                    window.location.href = `mailto:suanhataihanoi368@gmail.com?subject=${subject}&body=${body}`;
-                    
-                    setStatus("success");
-                    e.currentTarget.reset();
-                  };
-
-                  if (status === "success") {
-                    return (
-                      <div className="p-8 md:p-12 text-center space-y-6 flex flex-col items-center justify-center h-full">
-                        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-2">
-                          <CheckCircle2 className="w-12 h-12" />
-                        </div>
-                        <h4 className="text-2xl font-bold">Yêu cầu đã được khởi tạo!</h4>
-                        <p className="text-muted-foreground italic">Vui lòng kiểm tra và nhấn nút "Gửi" trong ứng dụng Gmail/Outlook của bạn để hoàn tất.</p>
-                        <Button variant="outline" onClick={() => setStatus("idle")} className="rounded-xl px-8">Gửi yêu cầu khác</Button>
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold uppercase tracking-widest">Họ tên</label>
-                          <input 
-                            name="fullname"
-                            required
-                            type="text" 
-                            className="w-full bg-secondary border-none rounded-lg p-4 focus:ring-2 focus:ring-primary outline-none transition-all" 
-                            placeholder="Nguyễn Văn A" 
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label className="text-sm font-bold uppercase tracking-widest">Số điện thoại</label>
-                          <input 
-                            name="phone"
-                            required
-                            type="tel" 
-                            className="w-full bg-secondary border-none rounded-lg p-4 focus:ring-2 focus:ring-primary outline-none transition-all" 
-                            placeholder="0xxx.xxx.xxx" 
-                          />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold uppercase tracking-widest">Địa chỉ công trình</label>
-                        <input 
-                          name="address"
-                          required
-                          type="text" 
-                          className="w-full bg-secondary border-none rounded-lg p-4 focus:ring-2 focus:ring-primary outline-none transition-all" 
-                          placeholder="Vinhomes Smart City, Cầu Giấy..." 
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold uppercase tracking-widest">Nội dung yêu cầu</label>
-                        <textarea 
-                          name="message"
-                          required
-                          rows={4} 
-                          className="w-full bg-secondary border-none rounded-lg p-4 focus:ring-2 focus:ring-primary outline-none transition-all resize-none" 
-                          placeholder="Ví dụ: Thi công trần thạch cao 50m2 phòng khách..." 
-                        />
-                      </div>
-                      <Button 
-                        className="w-full h-14 text-white text-base font-bold bg-primary hover:bg-primary-hover rounded-xl shadow-lg transition-all"
-                      >
-                        Gửi yêu cầu ngay <Zap className="ml-2 w-5 h-5" />
-                      </Button>
-                      <p className="text-center text-sm text-muted-foreground pt-4 flex items-center justify-center gap-2">
-                        <ShieldCheck className="w-4 h-4 text-primary" /> Thông tin của bạn được cam kết bảo mật.
-                      </p>
-                    </form>
-                  );
-                })()}
-              </Card>
-            </div>
-          </div>
-        </section>
-          </>
-        )}
       </main>
-
-      <Footer />
-
-    </div>
+    </HoangPhatLayout>
   );
 };
 
